@@ -17,17 +17,13 @@
 -- TODO stuff
 -- check airboss
 
--- Random Air Traffic [working]
+-- Random Air Traffic
 local RAT_AN26 = RAT:New("RAT_AN26")
 RAT_AN26:SetTerminalType(AIRBASE.TerminalType.OpenBig)
 RAT_AN26:Spawn(5)
 local RAT_IL76 = RAT:New("RAT_IL76")
 RAT_IL76:SetTerminalType(AIRBASE.TerminalType.OpenBig)
 RAT_IL76:Spawn(5)
-
--- Set up players
-Player1 = GROUP:FindByName("AUS Skyhawk 1")
-Player2 = GROUP:FindByName("AUS Skyhawk 2")
 
 -- Set up polygon exclusion zones
 exclZone1 = ZONE_POLYGON:New("TUR-ZONE-EXCL-01",GROUP:FindByName("TUR-ZONE-EXCL-01"))
@@ -36,15 +32,26 @@ exclZone3 = ZONE_POLYGON:New("RUS-ZONE-EXCL-02",GROUP:FindByName("RUS-ZONE-EXCL-
 exclZone4 = ZONE_POLYGON:New("GEO-ZONE-EXCL-01",GROUP:FindByName("GEO-ZONE-EXCL-01"))
 testZone1 = ZONE:New("Test-Zone")
 
-p1TestMessager = SCHEDULER:New(Player1,
+-- Set up unit globals TODO only after players spawned?
+CarrierGrp = GROUP:FindByName("AUS MV Steve Irwin")
+-- Player1Grp = GROUP:FindByName("AUS Skyhawk 1")
+-- Player2Grp = GROUP:FindByName("AUS Skyhawk 2")
+
+-- testZone1:E( { "Group is completely in Zone:", CarrierGrp:IsCompletelyInZone( testZone1 ) } )
+-- testZone1:E( { "Group is partially in Zone:", CarrierGrp:IsPartlyInZone( testZone1 ) } )
+-- testZone1:E( { "Group is not in Zone:", CarrierGrp:IsNotInZone( testZone1 ) } )
+
+-- SCHEDULER:New(MasterObject, SchedulerFunction, SchedulerArguments, Start, Repeat, RandomizeFactor, Stop)
+carrierTestMessager = SCHEDULER:New(CarrierGrp,
   function()
-    Player1:MessageToAll( ( Player1:IsCompletelyInZone(testZone1)) and "Test Zone Entered", 10)
-    if Player1:IsCompletelyInZone(testZone1) then
-      -- TODO remove
-      Player1:GetUnit(1):SmokeGreen()
+    if CarrierGrp:IsCompletelyInZone(testZone1) then
+      -- CarrierGrp:GetUnit(1):SmokeGreen()
+      CarrierGrp:MessageToBlue("Carrier in Test Zone",5)
     end
   end,
   {}, 0, 5)
+
+--[[
 
 p1ExclMessager = SCHEDULER:New(Player1,
   function()
@@ -71,6 +78,8 @@ p2ExclMessager = SCHEDULER:New(Player2,
     end
   end,
   {}, 0, 5)
+  
+]]--
 
 -- No MOOSE settings menu. Comment out this line if required.
 -- _SETTINGS:SetPlayerMenuOff()
@@ -131,18 +140,15 @@ AirbossStennis:SetTrapSheet()
 -- Start airboss class.
 AirbossStennis:Start()
 
-
+--[[
 --- Function called when recovery tanker is started.
 function tanker:OnAfterStart(From,Event,To)
-
   -- Set recovery tanker.
   AirbossStennis:SetRecoveryTanker(tanker)  
-
-
   -- Use tanker as radio relay unit for LSO transmissions.
   AirbossStennis:SetRadioRelayLSO(self:GetUnitName())
-  
 end
+]]--
 
 --- Function called when AWACS is started.
 function awacs:OnAfterStart(From,Event,To)
