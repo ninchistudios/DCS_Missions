@@ -4,25 +4,47 @@
 -- When both clear of 10nm Steve hands them off
 -- Nearing Sukhumi Steve relays intel of insurgent anti-aircraft gun harrassing military traffic 2nm SE of Sukhumi airfield, clear to engage
 
+-- TODO Events
+-- scramble appropriate intercept if violate airspace
+
 -- TODO Success params
--- If gun destroyed, Max success. Not destroyed, max partial success.
--- If violate RUS airspace, scramble appropriate intercept, max partial fail.
--- If shot down, max partial fail.
--- If dead, max fail.
--- If carrier shoots down Russian, max partial fail.
+-- Success > Partial Success > Unsuccessful > Failure > Disastrous
+-- Partial Success: INS gun not destroyed | < 3 waypoint zones visited
+-- Unsuccessful: violate RUS airspace | < 2 waypoint zones visited | carrier shoots down Russian
+-- Failure: shot down | < 1 waypoint zones visited
+-- Disastrous: death
 
 -- TODO stuff
 -- check airboss
 
+-- Random Air Traffic [working]
+local RAT_AN26 = RAT:New("RAT_AN26")
+RAT_AN26:SetTerminalType(AIRBASE.TerminalType.OpenBig)
+RAT_AN26:Spawn(5)
+local RAT_IL76 = RAT:New("RAT_IL76")
+RAT_IL76:SetTerminalType(AIRBASE.TerminalType.OpenBig)
+RAT_IL76:Spawn(5)
+
 -- Set up players
-local Player1 = GROUP:FindByName("AUS Skyhawk 1")
-local Player2 = GROUP:FindByName("AUS Skyhawk 2")
+Player1 = GROUP:FindByName("AUS Skyhawk 1")
+Player2 = GROUP:FindByName("AUS Skyhawk 2")
 
 -- Set up polygon exclusion zones
-local exclZone1 = ZONE_POLYGON:New("TUR-ZONE-EXCL-01",GROUP:FindByName("TUR-ZONE-EXCL-01"))
-local exclZone2 = ZONE_POLYGON:New("RUS-ZONE-EXCL-01",GROUP:FindByName("RUS-ZONE-EXCL-01"))
-local exclZone3 = ZONE_POLYGON:New("RUS-ZONE-EXCL-02",GROUP:FindByName("RUS-ZONE-EXCL-02"))
-local exclZone4 = ZONE_POLYGON:New("GEO-ZONE-EXCL-01",GROUP:FindByName("GEO-ZONE-EXCL-01"))
+exclZone1 = ZONE_POLYGON:New("TUR-ZONE-EXCL-01",GROUP:FindByName("TUR-ZONE-EXCL-01"))
+exclZone2 = ZONE_POLYGON:New("RUS-ZONE-EXCL-01",GROUP:FindByName("RUS-ZONE-EXCL-01"))
+exclZone3 = ZONE_POLYGON:New("RUS-ZONE-EXCL-02",GROUP:FindByName("RUS-ZONE-EXCL-02"))
+exclZone4 = ZONE_POLYGON:New("GEO-ZONE-EXCL-01",GROUP:FindByName("GEO-ZONE-EXCL-01"))
+testZone1 = ZONE:New("Test-Zone")
+
+p1TestMessager = SCHEDULER:New(Player1,
+  function()
+    Player1:MessageToAll( ( Player1:IsCompletelyInZone(testZone1)) and "Test Zone Entered", 10)
+    if Player1:IsCompletelyInZone(testZone1) then
+      -- TODO remove
+      Player1:GetUnit(1):SmokeGreen()
+    end
+  end,
+  {}, 0, 5)
 
 p1ExclMessager = SCHEDULER:New(Player1,
   function()
@@ -30,7 +52,7 @@ p1ExclMessager = SCHEDULER:New(Player1,
     Player1:MessageToAll( ( Player1:IsCompletelyInZone(exclZone2)) and "Violating western Russian exclusion zone!", 10)
     Player1:MessageToAll( ( Player1:IsCompletelyInZone(exclZone3)) and "Violating northern Russian exclusion zone!", 10)
     Player1:MessageToAll( ( Player1:IsCompletelyInZone(exclZone4)) and "Breaching Georgian airspace!", 10)    
-    if Player1:IsCompletelyInZone(exclZone1) or Player1:IsCompletelyInZone(exclZone2) or Player1:IsCompletelyInZone(exclZone3) or Player1:IsCompletelyInZone(exclZone4)  then
+    if (Player1:IsCompletelyInZone(exclZone1) or Player1:IsCompletelyInZone(exclZone2) or Player1:IsCompletelyInZone(exclZone3) or Player1:IsCompletelyInZone(exclZone4)) then
       -- TODO remove
       Player1:GetUnit(1):SmokeRed()
     end
@@ -43,7 +65,7 @@ p2ExclMessager = SCHEDULER:New(Player2,
     Player2:MessageToAll( ( Player2:IsCompletelyInZone(exclZone2)) and "Violating western Russian exclusion zone!", 10)
     Player2:MessageToAll( ( Player2:IsCompletelyInZone(exclZone3)) and "Violating northern Russian exclusion zone!", 10)
     Player2:MessageToAll( ( Player2:IsCompletelyInZone(exclZone4)) and "Breaching Georgian airspace!", 10)    
-    if Player2:IsCompletelyInZone(exclZone1) or Player2:IsCompletelyInZone(exclZone2) or Player2:IsCompletelyInZone(exclZone3) or Player2:IsCompletelyInZone(exclZone4)  then
+    if (Player2:IsCompletelyInZone(exclZone1) or Player2:IsCompletelyInZone(exclZone2) or Player2:IsCompletelyInZone(exclZone3) or Player2:IsCompletelyInZone(exclZone4)) then
       -- TODO remove
       Player2:GetUnit(1):SmokeRed()
     end
@@ -61,8 +83,8 @@ p2ExclMessager = SCHEDULER:New(Player2,
 -- tanker:SetTACAN(1, "TKR")
 -- tanker:__Start(1)
 
--- E-2D AWACS spawning on Stennis.
-local awacs=RECOVERYTANKER:New("Steve Irwin", "E-2D Wizard Group")
+-- E-2D AWACS spawning on Carrier.
+local awacs=RECOVERYTANKER:New(UNIT:FindByName("Steve Irwin"), "AUS Wizard AWACS")
 awacs:SetAWACS()
 awacs:SetRadio(260)
 awacs:SetAltitude(20000)
@@ -72,9 +94,8 @@ awacs:SetModex(611)
 awacs:SetTACAN(2, "WIZ")
 awacs:__Start(1)
 
--- Rescue Helo with home base Lake Erie. Has to be a global object!
-rescuehelo=RESCUEHELO:New("Steve Irwin", "Rescue Helo")
-rescuehelo:SetHomeBase(AIRBASE:FindByName("Gaduata"))
+-- Rescue Helo has to be a global object!
+rescuehelo=RESCUEHELO:New(UNIT:FindByName("Steve Irwin"), "AUS Rescue")
 rescuehelo:SetModex(42)
 rescuehelo:__Start(1)
   
@@ -82,8 +103,8 @@ rescuehelo:__Start(1)
 local AirbossStennis=AIRBOSS:New("Steve Irwin")
 
 -- Add recovery windows:
--- Case I from 9 to 10 am.
-local window1=AirbossStennis:AddRecoveryWindow( "15:00", "20:00", 1, nil, false, 25)
+-- AIRBOSS:AddRecoveryWindow(starttime, stoptime, case, holdingoffset, turnintowind, speed, uturn)
+local window1=AirbossStennis:AddRecoveryWindow( "15:30", "20:00", 1, nil, true, 15, false)
 
 -- Set folder of airboss sound files within miz file.
 AirbossStennis:SetSoundfilesFolder("Airboss Soundfiles/")
@@ -92,7 +113,8 @@ AirbossStennis:SetSoundfilesFolder("Airboss Soundfiles/")
 AirbossStennis:SetMenuSingleCarrier()
 
 -- Skipper menu.
-AirbossStennis:SetMenuRecovery(30, 20, false)
+-- AIRBOSS:SetMenuRecovery(duration, windondeck, uturn, offset)
+AirbossStennis:SetMenuRecovery(30, 15, false, 30)
 
 -- Remove landed AI planes from flight deck.
 AirbossStennis:SetDespawnOnEngineShutdown()
