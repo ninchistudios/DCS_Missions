@@ -15,7 +15,28 @@
 -- Disastrous: death
 
 -- TODO stuff
--- check airboss
+
+-- Blue Globals
+P1Grp = nil -- wait for birth event
+P2Grp = nil -- wait for birth event
+CarrierGrp = GROUP:FindByName("AUS MV Steve Irwin")
+
+-- detect MP clients connecting
+BirthHandler = EVENTHANDLER:New()
+BirthHandler:HandleEvent( EVENTS.Birth )
+
+--- @param Core.Event#EVENT self
+-- @param Core.Event#EVENTDATA EventData
+function BirthHandler:OnEventBirth( EventData )
+  self:E(string.format("BirthHandler received OnEventBirth from %s", EventData.IniGroup.GroupName))
+  if EventData.IniGroup.GroupName == "AUS Skyhawk 1" then
+    P1Grp = EventData.IniGroup
+    self:E("Skyhawk 1 connected")
+  elseif EventData.IniGroup.GroupName == "AUS Skyhawk 2" then
+    P2Grp = EventData.IniGroup
+    self:E("Skyhawk 2 connected")
+  end
+end
 
 -- Random Air Traffic
 local RAT_AN26 = RAT:New("RAT_AN26")
@@ -32,54 +53,52 @@ exclZone3 = ZONE_POLYGON:New("RUS-ZONE-EXCL-02",GROUP:FindByName("RUS-ZONE-EXCL-
 exclZone4 = ZONE_POLYGON:New("GEO-ZONE-EXCL-01",GROUP:FindByName("GEO-ZONE-EXCL-01"))
 testZone1 = ZONE:New("Test-Zone")
 
--- Set up unit globals TODO only after players spawned?
-CarrierGrp = GROUP:FindByName("AUS MV Steve Irwin")
--- Player1Grp = GROUP:FindByName("AUS Skyhawk 1")
--- Player2Grp = GROUP:FindByName("AUS Skyhawk 2")
-
--- testZone1:E( { "Group is completely in Zone:", CarrierGrp:IsCompletelyInZone( testZone1 ) } )
--- testZone1:E( { "Group is partially in Zone:", CarrierGrp:IsPartlyInZone( testZone1 ) } )
--- testZone1:E( { "Group is not in Zone:", CarrierGrp:IsNotInZone( testZone1 ) } )
-
 -- SCHEDULER:New(MasterObject, SchedulerFunction, SchedulerArguments, Start, Repeat, RandomizeFactor, Stop)
-carrierTestMessager = SCHEDULER:New(CarrierGrp,
+AirspaceMessager = SCHEDULER:New(CarrierGrp,
   function()
-    if CarrierGrp:IsCompletelyInZone(testZone1) then
-      -- CarrierGrp:GetUnit(1):SmokeGreen()
-      CarrierGrp:MessageToBlue("Carrier in Test Zone",5)
+    if P1Grp == nil then 
+      -- CarrierGrp:E({"P1Grp is nil", P1Grp})
+    else
+      if P1Grp:IsCompletelyInZone(exclZone1) then
+        CarrierGrp:MessageToBlue("Skyhawk 211 you are trespassing neutral Turkish airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P1Grp:IsCompletelyInZone(exclZone2) then
+        CarrierGrp:MessageToBlue("Skyhawk 211 you are trespassing Russian coastal airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P1Grp:IsCompletelyInZone(exclZone3) then
+        CarrierGrp:MessageToBlue("Skyhawk 211 you are trespassing Russian mainland airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P1Grp:IsCompletelyInZone(exclZone4) then
+        CarrierGrp:MessageToBlue("Skyhawk 211 you are trespassing friendly Georgian airspace, you risk a diplomatic incident if you do not immediately divert.", 10)
+      end
+      if P1Grp:IsCompletelyInZone(testZone1) then
+        -- CarrierGrp:MessageToBlue("Skyhawk 211 you are transiting test zone.", 10)
+        -- P1Grp:GetUnit(1):SmokeWhite()
+      end
     end
-  end,
-  {}, 0, 5)
-
---[[
-
-p1ExclMessager = SCHEDULER:New(Player1,
-  function()
-    Player1:MessageToAll( ( Player1:IsCompletelyInZone(exclZone1)) and "Violating Turkish airspace!", 10)
-    Player1:MessageToAll( ( Player1:IsCompletelyInZone(exclZone2)) and "Violating western Russian exclusion zone!", 10)
-    Player1:MessageToAll( ( Player1:IsCompletelyInZone(exclZone3)) and "Violating northern Russian exclusion zone!", 10)
-    Player1:MessageToAll( ( Player1:IsCompletelyInZone(exclZone4)) and "Breaching Georgian airspace!", 10)    
-    if (Player1:IsCompletelyInZone(exclZone1) or Player1:IsCompletelyInZone(exclZone2) or Player1:IsCompletelyInZone(exclZone3) or Player1:IsCompletelyInZone(exclZone4)) then
-      -- TODO remove
-      Player1:GetUnit(1):SmokeRed()
+    if P2Grp == nil then 
+      -- CarrierGrp:E({"P2Grp is nil", P2Grp})
+    else
+      if P2Grp:IsCompletelyInZone(exclZone1) then
+        CarrierGrp:MessageToBlue("Skyhawk 221 you are trespassing neutral Turkish airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P2Grp:IsCompletelyInZone(exclZone2) then
+        CarrierGrp:MessageToBlue("Skyhawk 221 you are trespassing Russian coastal airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P2Grp:IsCompletelyInZone(exclZone3) then
+        CarrierGrp:MessageToBlue("Skyhawk 221 you are trespassing Russian mainland airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P2Grp:IsCompletelyInZone(exclZone4) then
+        CarrierGrp:MessageToBlue("Skyhawk 221 you are trespassing friendly Georgian airspace, you risk a diplomatic incident if you do not immediately divert.", 10)
+      end
+      if P2Grp:IsCompletelyInZone(testZone1) then
+        -- CarrierGrp:MessageToBlue("Skyhawk 221 you are transiting test zone.", 10)
+        -- P2Grp:GetUnit(1):SmokeWhite()
+      end
     end
-  end,
-  {}, 0, 5)
 
-p2ExclMessager = SCHEDULER:New(Player2,
-  function()
-    Player2:MessageToAll( ( Player2:IsCompletelyInZone(exclZone1)) and "Violating Turkish airspace!", 10)
-    Player2:MessageToAll( ( Player2:IsCompletelyInZone(exclZone2)) and "Violating western Russian exclusion zone!", 10)
-    Player2:MessageToAll( ( Player2:IsCompletelyInZone(exclZone3)) and "Violating northern Russian exclusion zone!", 10)
-    Player2:MessageToAll( ( Player2:IsCompletelyInZone(exclZone4)) and "Breaching Georgian airspace!", 10)    
-    if (Player2:IsCompletelyInZone(exclZone1) or Player2:IsCompletelyInZone(exclZone2) or Player2:IsCompletelyInZone(exclZone3) or Player2:IsCompletelyInZone(exclZone4)) then
-      -- TODO remove
-      Player2:GetUnit(1):SmokeRed()
-    end
   end,
-  {}, 0, 5)
-  
-]]--
+  {}, 0, 10)
 
 -- No MOOSE settings menu. Comment out this line if required.
 -- _SETTINGS:SetPlayerMenuOff()
