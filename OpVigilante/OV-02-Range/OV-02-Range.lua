@@ -1,18 +1,10 @@
 
 -- TODO Messages
--- Steve Irwin waits for both pilots to be in the aircraft and clears them for departure
--- When both clear of 10nm Steve hands them off
--- Nearing Sukhumi Steve relays intel of insurgent anti-aircraft gun harrassing military traffic 2nm SE of Sukhumi airfield, clear to engage
 
 -- TODO Events
--- scramble appropriate intercept if violate airspace
 
 -- TODO Success params
 -- Success > Partial Success > Unsuccessful > Failure > Disastrous
--- Partial Success: INS gun not destroyed | < 3 waypoint zones visited
--- Unsuccessful: violate RUS airspace | < 2 waypoint zones visited | carrier shoots down Russian
--- Failure: shot down | < 1 waypoint zones visited
--- Disastrous: death
 
 -- TODO stuff
 
@@ -20,6 +12,19 @@
 P1Grp = nil -- wait for birth event
 P2Grp = nil -- wait for birth event
 CarrierGrp = GROUP:FindByName("AUS MV Steve Irwin")
+
+-- Range
+local GNR_strafe = {"GNR Strafe 1"}
+local GNR_bomb = {"GNR Bomb 1"}
+GNR = RANGE:New("Gudauta Naval Range")
+-- RANGE:AddStrafePit(targetnames, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)
+GNR:AddStrafePit(GNR_strafe,3000,300,180,false,20,610)
+GNR:AddBombingTargets(GNR_bomb,50)
+GNR:Start()
+
+--------------------------------------------------------------
+-- Below here mostly doesn't need to be touched per mission --
+--------------------------------------------------------------
 
 -- detect MP clients connecting
 BirthHandler = EVENTHANDLER:New()
@@ -132,7 +137,7 @@ local AirbossStennis=AIRBOSS:New("Steve Irwin")
 
 -- Add recovery windows:
 -- AIRBOSS:AddRecoveryWindow(starttime, stoptime, case, holdingoffset, turnintowind, speed, uturn)
-local window1=AirbossStennis:AddRecoveryWindow( "15:30", "20:00", 1, nil, true, 15, false)
+local window1=AirbossStennis:AddRecoveryWindow( "08:30", "12:30", 1, nil, false, 15, false)
 
 -- Set folder of airboss sound files within miz file.
 AirbossStennis:SetSoundfilesFolder("Airboss Soundfiles/")
