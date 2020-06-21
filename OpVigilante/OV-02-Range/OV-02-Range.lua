@@ -18,7 +18,7 @@ local GNR_strafe = {"GNR Strafe 1"}
 local GNR_bomb = {"GNR Bomb 1"}
 GNR = RANGE:New("Gudauta Naval Range")
 -- RANGE:AddStrafePit(targetnames, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)
-GNR:AddStrafePit(GNR_strafe,3000,300,180,false,20,610)
+GNR:AddStrafePit(GNR_strafe,3000,300,0,false,20,610)
 GNR:AddBombingTargets(GNR_bomb,50)
 GNR:Start()
 
@@ -160,6 +160,8 @@ AirbossStennis:SetAutoSave()
 
 -- Enable trap sheet.
 AirbossStennis:SetTrapSheet()
+
+AirbossStennis:SetTACAN(78, "X", "SIW")
 
 -- Start airboss class.
 AirbossStennis:Start()
