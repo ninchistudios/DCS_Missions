@@ -11,6 +11,7 @@
 -- Blue Globals
 P1Grp = nil -- wait for birth event
 P2Grp = nil -- wait for birth event
+P3Grp = nil -- wait for birth event
 CarrierGrp = GROUP:FindByName("AUS MV Steve Irwin")
 
 -- Range
@@ -40,6 +41,9 @@ function BirthHandler:OnEventBirth( EventData )
   elseif EventData.IniGroup.GroupName == "AUS Skyhawk 2" then
     P2Grp = EventData.IniGroup
     self:E("Skyhawk 2 connected")
+  elseif EventData.IniGroup.GroupName == "AUS Skyhawk 3" then
+    P2Grp = EventData.IniGroup
+    self:E("Skyhawk 3 connected")
   end
 end
 
@@ -95,6 +99,26 @@ AirspaceMessager = SCHEDULER:New(CarrierGrp,
       end
       if P2Grp:IsCompletelyInZone(exclZone4) then
         CarrierGrp:MessageToBlue("Skyhawk 221 you are trespassing friendly Georgian airspace, you risk a diplomatic incident if you do not immediately divert.", 10)
+      end
+      --[[ if P2Grp:IsCompletelyInZone(testZone1) then
+        CarrierGrp:MessageToBlue("Skyhawk 221 you are transiting test zone.", 10)
+        P2Grp:GetUnit(1):SmokeWhite()
+      end ]]--
+    end
+    if P3Grp == nil then 
+      -- CarrierGrp:E({"P2Grp is nil", P2Grp})
+    else
+      if P3Grp:IsCompletelyInZone(exclZone1) then
+        CarrierGrp:MessageToBlue("Skyhawk 231 you are trespassing neutral Turkish airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P3Grp:IsCompletelyInZone(exclZone2) then
+        CarrierGrp:MessageToBlue("Skyhawk 231 you are trespassing Russian coastal airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P3Grp:IsCompletelyInZone(exclZone3) then
+        CarrierGrp:MessageToBlue("Skyhawk 231 you are trespassing Russian mainland airspace, fighters will be scrambled if you do not immediately divert.", 10)
+      end
+      if P3Grp:IsCompletelyInZone(exclZone4) then
+        CarrierGrp:MessageToBlue("Skyhawk 231 you are trespassing friendly Georgian airspace, you risk a diplomatic incident if you do not immediately divert.", 10)
       end
       --[[ if P2Grp:IsCompletelyInZone(testZone1) then
         CarrierGrp:MessageToBlue("Skyhawk 221 you are transiting test zone.", 10)
