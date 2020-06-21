@@ -42,7 +42,7 @@ function BirthHandler:OnEventBirth( EventData )
     P2Grp = EventData.IniGroup
     self:E("Skyhawk 2 connected")
   elseif EventData.IniGroup.GroupName == "AUS Skyhawk 3" then
-    P2Grp = EventData.IniGroup
+    P3Grp = EventData.IniGroup
     self:E("Skyhawk 3 connected")
   end
 end
@@ -125,7 +125,6 @@ AirspaceMessager = SCHEDULER:New(CarrierGrp,
         P2Grp:GetUnit(1):SmokeWhite()
       end ]]--
     end
-
   end,
   {}, 0, 10)
 
