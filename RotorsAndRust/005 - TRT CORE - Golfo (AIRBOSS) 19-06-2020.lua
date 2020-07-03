@@ -1595,8 +1595,6 @@ function ENDMISSIONTRIGGERNO()
 end
 
 
-trigger.action.outText("▁ ▂ ▄ ▅ ▆ ▇ █ THE ROUND TABLE █ ▇ ▆ ▅ ▄ ▂ ▁", 30)
-trigger.action.outText("EN: CHECK YOUR MISSION CONFIG VIA RADIO MENU: Mission Options > Current Mission Settings & Mission Options > Active SQDN List -", 30)
-trigger.action.outText("EN: DON'T DESTROY GROUND UNITS WITHOUT JOINING A TASK OR THEY WONT REGENERATE - JOIN TAKS, ALWAYS -", 30)
-trigger.action.outText("ES: REVISA TU CONFIGURACION CON EL MENÚ DE RADIO: Mission Options > Current Mission Settings & Mission Options > Active SQDN List -", 30)
-trigger.action.outText("ES: NO ELIMINES UNIDADES TERRESTRES SIN UNIRTE A UNA TAREA O NO SE REGENERARAN - UNETE A LAS TAREAS, SIEMPRE -", 30)
+trigger.action.outText("▁ ▂ ▄ ▅ ▆ ▇ █ ROTORS AND RUST █ ▇ ▆ ▅ ▄ ▂ ▁", 30)
+trigger.action.outText("CHECK YOUR MISSION CONFIG VIA RADIO MENU: Mission Options > Current Mission Settings & Mission Options > Active SQDN List -", 30)
+trigger.action.outText("*** ONLY DESTROY GROUND UNITS THAT YOU HAVE AN ACTIVE TASKING FOR ***", 30)

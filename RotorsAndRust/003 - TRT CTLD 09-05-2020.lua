@@ -37,7 +37,7 @@ ctld.hawkLaunchers = 5 -- controls how many launchers to add to the hawk when it
 ctld.spawnRPGWithCoalition = true --spawns a friendly RPG unit with Coalition forces
 ctld.spawnStinger = true -- spawns a stinger / igla soldier with a group of 6 or more soldiers!
 
-ctld.enabledFOBBuilding = false -- if true, you can load a crate INTO a C-130 than when unpacked creates a Forward Operating Base (FOB) which is a new place to spawn (crates) and carry crates from
+ctld.enabledFOBBuilding = true -- if true, you can load a crate INTO a C-130 than when unpacked creates a Forward Operating Base (FOB) which is a new place to spawn (crates) and carry crates from
 -- In future i'd like it to be a FARP but so far that seems impossible...
 -- You can also enable troop Pickup at FOBS
 
@@ -49,9 +49,9 @@ ctld.buildTimeFOB = 120 --time in seconds for the FOB to be built
 ctld.radioSound = "beacon.ogg" -- the name of the sound file to use for the FOB radio beacons. If this isnt added to the mission BEACONS WONT WORK!
 ctld.radioSoundFC3 = "beaconsilent.ogg" -- name of the second silent radio file, used so FC3 aircraft dont hear ALL the beacon noises... :)
 
-ctld.deployedBeaconBattery = 30 -- the battery on deployed beacons will last for this number minutes before needing to be re-deployed
+ctld.deployedBeaconBattery = 240 -- the battery on deployed beacons will last for this number minutes before needing to be re-deployed
 
-ctld.enabledRadioBeaconDrop = false -- if its set to false then beacons cannot be dropped by units
+ctld.enabledRadioBeaconDrop = true -- if its set to false then beacons cannot be dropped by units
 
 ctld.allowRandomAiTeamPickups = false -- Allows the AI to randomize the loading of infantry teams (specified below) at pickup zones
 
@@ -60,7 +60,7 @@ ctld.allowRandomAiTeamPickups = false -- Allows the AI to randomize the loading 
 ctld.minimumHoverHeight = 5.5 -- Lowest allowable height for crate hover
 ctld.maximumHoverHeight = 18.0 -- Highest allowable height for crate hover
 ctld.maxDistanceFromCrate = 8.5 -- Maximum distance from from crate for hover
-ctld.hoverTime = 2 -- Time to hold hover above a crate for loading in seconds
+ctld.hoverTime = 5 -- Time to hold hover above a crate for loading in seconds
 
 -- end of Simulated Sling load configuration
 
@@ -487,9 +487,10 @@ ctld.vehicleTransportEnabled = {
 ctld.unitLoadLimits = {
 
     -- Remove the -- below to turn on options
-    -- ["SA342Mistral"] = 4,
-    -- ["SA342L"] = 4,
-    -- ["SA342M"] = 4,
+    ["SA342Mistral"] = 4,
+    ["SA342L"] = 4,
+    ["SA342M"] = 4,
+    ["UH-1H"] = 10,
 
 }
 
@@ -504,12 +505,15 @@ ctld.unitLoadLimits = {
 -- You can also add an optional coalition side to limit the group to one side
 -- for the side - 2 is BLUE and 1 is RED
 ctld.loadableGroups = {
-    {name = "Standard Group", inf = 6, mg = 7, at = 2 }, -- will make a loadable group with 5 infantry, 2 MGs and 2 anti-tank for both coalitions
-    {name = "6-Man Platoon (UH-1H)", inf = 6, mg = 7, at = 2 }, -- will make a loadable group with 5 infantry, 2 MGs and 2 anti-tank for both coalitions
-    {name = "23-Man Group (Mi-8MTV2)", inf = 15, mg = 6, at = 2 }, -- will make a loadable group with 5 infantry, 2 MGs and 2 anti-tank for both coalitions
-    {name = "Anti Air", inf = 2, aa = 10  },
-    {name = "Anti Tank", inf = 5, at = 10  },
-    {name = "Mortar Squad", mortar = 10 },
+    {name = "Ranger Troop (4)", inf = 1, mg = 1, at = 1, aa = 1 }, 
+    {name = "Ranger AA Troop (4)", inf = 1, mg = 1, aa = 2 },
+    {name = "Ranger AT Troop (4)", inf = 1, mg = 1, at = 2 },
+    {name = "Ranger Mortar Troop (4)", inf = 1, mg = 1, mortar = 2 },
+    {name = "Infantry Section (10)", inf = 6, mg = 2, at = 2 },
+    {name = "Anti Air Section (10)", inf = 5, aa = 4, mg = 1 },
+    {name = "Anti Tank Section (10)", inf = 5, at = 4, mg = 1 },
+    {name = "Mortar Section (10)", mortar = 4, inf = 4, aa = 1, mg = 1 },
+    {name = "Infantry Platoon Minus (23)", inf = 15, mg = 4, at = 2, aa = 2 },
     -- {name = "Mortar Squad Red", inf = 2, mortar = 5, side =1 }, --would make a group loadable by RED only
 }
 
@@ -548,7 +552,7 @@ ctld.spawnableCrates = {
         { weight = 252, desc = "Ural-375 Ammo Truck", unit = "Ural-375", side = 1, cratesRequired = 1 },
         { weight = 253, desc = "M-818 Ammo Truck", unit = "M 818", side = 2, cratesRequired = 1 },
 
-        { weight = 800, desc = "FOB Crate - Small", unit = "FOB-SMALL" }, -- Builds a FOB! - requires 3 * ctld.cratesRequiredForFOB
+        { weight = 800, desc = "FOB Crate - Small (6)", unit = "FOB-SMALL" }, -- Builds a FOB! - requires 3 * ctld.cratesRequiredForFOB
     },
     ["AA Crates"] = {
         { weight = 50, desc = "Stinger", unit = "Stinger manpad", side = 2 },
