@@ -5,10 +5,10 @@
 
 -- TODO Success params
 -- Success > Partial Success > Unsuccessful > Failure > Disastrous
--- Partial Success: 
--- Unsuccessful: 
--- Failure: 
--- Disastrous: 
+-- Partial Success:
+-- Unsuccessful:
+-- Failure:
+-- Disastrous:
 
 -- TODO stuff
 
@@ -18,7 +18,7 @@ P2Grp = nil -- wait for birth event
 P3Grp = nil -- wait for birth event
 P4Grp = nil -- wait for birth event
 
-CarrierGrp = GROUP:FindByName("AUS MV Steve Irwin")
+CarrierGrp = GROUP:FindByName("AUS HMAS Adelaide")
 
 -- detect MP clients connecting
 BirthHandler = EVENTHANDLER:New()
@@ -61,7 +61,7 @@ testZone1 = ZONE:New("Test-Zone")
 -- SCHEDULER:New(MasterObject, SchedulerFunction, SchedulerArguments, Start, Repeat, RandomizeFactor, Stop)
 AirspaceMessager = SCHEDULER:New(CarrierGrp,
   function()
-    if P1Grp == nil then 
+    if P1Grp == nil then
       -- CarrierGrp:E({"P1Grp is nil", P1Grp})
     else
       if P1Grp:IsCompletelyInZone(exclZone1) then
@@ -81,7 +81,7 @@ AirspaceMessager = SCHEDULER:New(CarrierGrp,
         P1Grp:GetUnit(1):SmokeWhite()
       end ]]--
     end
-    if P2Grp == nil then 
+    if P2Grp == nil then
       -- CarrierGrp:E({"P2Grp is nil", P2Grp})
     else
       if P2Grp:IsCompletelyInZone(exclZone1) then
@@ -108,7 +108,7 @@ AirspaceMessager = SCHEDULER:New(CarrierGrp,
 -- No MOOSE settings menu. Comment out this line if required.
 -- _SETTINGS:SetPlayerMenuOff()
 
--- S-3B Recovery Tanker spawning in air. 
+-- S-3B Recovery Tanker spawning in air.
 local tanker=RECOVERYTANKER:New(UNIT:FindByName("Steve Irwin"), "AUS Shell Tanker")
 tanker:SetTakeoffAir()
 tanker:SetRadio(250)
@@ -131,7 +131,7 @@ awacs:__Start(1)
 rescuehelo=RESCUEHELO:New(UNIT:FindByName("Steve Irwin"), "AUS Rescue")
 rescuehelo:SetModex(42)
 rescuehelo:__Start(1)
-  
+
 -- Create AIRBOSS object.
 local AirbossStennis=AIRBOSS:New("Steve Irwin")
 
@@ -167,7 +167,7 @@ AirbossStennis:Start()
 --- Function called when recovery tanker is started.
 function tanker:OnAfterStart(From,Event,To)
   -- Set recovery tanker.
-  AirbossStennis:SetRecoveryTanker(tanker)  
+  AirbossStennis:SetRecoveryTanker(tanker)
   -- Use tanker as radio relay unit for LSO transmissions.
   AirbossStennis:SetRadioRelayLSO(self:GetUnitName())
 end
@@ -175,7 +175,7 @@ end
 --- Function called when AWACS is started.
 function awacs:OnAfterStart(From,Event,To)
   -- Set AWACS.
-  AirbossStennis:SetRecoveryTanker(tanker)  
+  AirbossStennis:SetRecoveryTanker(tanker)
 end
 
 --- Function called when rescue helo is started.
@@ -191,7 +191,7 @@ function AirbossStennis:OnAfterLSOGrade(From, Event, To, playerData, grade)
   -- Discord bot here
   local score=tonumber(Grade.points)
   local name=tostring(PlayerData.name)
-  
+
   --- Report LSO grade to dcs.log file.
   env.info(string.format("Player %s scored %.1f", name, score))
 end
