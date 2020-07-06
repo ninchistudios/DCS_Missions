@@ -22,6 +22,8 @@ It is 2017. Emboldened by political events in the US, and with ever more overt s
 
 Following a number of horrific bombings and rocket attacks in Israel and widespread international condemnation, the tensions growing between the Ayatollah and his hawkish Revolutionary Guard, and the moderate President representing the Iranian Army and the majority of the Iranian people, became very obvious. Fearing the seeds of revolution, the Ayatollah cracked down hard internally and the President was forced into exile. Curfews were imposed and Iran is under martial law - leading ordinary Iranians to communicate widespread support for armed removal of the Ayatollah and IRG before the total shutdown of internet access across Iran.
 
+The IRG naval forces then began harassing shipping in the Strait of Hormuz, engaging in multiple acts of piracy and mining sections of the shipping channel on the Iranian side.
+
 Seizing the political opportunity, Israel successfully organised an international coalition to mount a strategic campaign in the Gulf to restore the moderate Presidency and Constitution of Iran, and dismantle the Islamic Theocracy as well as the die-hard IRG. The campaign began on 1 May 2017, with the coalition navies sweeping the northern Persian Gulf and preparing for a full ground campaign.
 
 Key objectives of the campaign are:
