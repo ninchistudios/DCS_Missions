@@ -101,6 +101,8 @@ Notes:
 * Altitudes in ft, distances in nm or meters as appropriate
 
 Required mods:
+* Juan Carlos LHD https://www.digitalcombatsimulator.com/en/files/3309515/
+* Operation Disco Ball skin pack TBC
 * Combined Arms
 * Persian Gulf
 * Gazelle OR Kiowa Warrior
