@@ -801,6 +801,50 @@ BARCO04 = GROUP:FindByName('⚓ CVN-73 George Washington'):PatrolRoute()
 local WashingtonTCNU = UNIT:FindByName('⚓ CVN-73 George Washington')
 local WashingtonBeacon = WashingtonTCNU:GetBeacon():ActivateTACAN(73, 'X', 'WSN', true):ActivateICLS(3, 'WSN')
 
+-- Create AIRBOSS object.
+local AirbossStennis=AIRBOSS:New("⚓ CVN-74 Stennis")
+
+-- Add recovery windows:
+-- AIRBOSS:AddRecoveryWindow(starttime, stoptime, case, holdingoffset, turnintowind, speed, uturn)
+local window1=AirbossStennis:AddRecoveryWindow( "09:30", "22:00", 1, nil, false, 11, false)
+
+-- Set folder of airboss sound files within miz file.
+AirbossStennis:SetSoundfilesFolder("Airboss Soundfiles/")
+
+-- Single carrier menu optimization.
+-- AirbossStennis:SetMenuSingleCarrier()
+
+-- Skipper menu.
+-- AIRBOSS:SetMenuRecovery(duration, windondeck, uturn, offset)
+AirbossStennis:SetMenuRecovery(30, 15, false, 30)
+
+-- Remove landed AI planes from flight deck.
+AirbossStennis:SetDespawnOnEngineShutdown()
+
+-- Load all saved player grades from your "Saved Games\DCS" folder (if lfs was desanitized).
+-- AirbossStennis:Load()
+
+-- Automatically save player results to your "Saved Games\DCS" folder each time a player get a final grade from the LSO.
+-- AirbossStennis:SetAutoSave()
+
+-- Enable trap sheet.
+AirbossStennis:SetTrapSheet()
+
+-- Start airboss class.
+AirbossStennis:Start()
+
+--- Function called when a player gets graded by the LSO.
+function AirbossStennis:OnAfterLSOGrade(From, Event, To, playerData, grade)
+  local PlayerData=playerData --Ops.Airboss#AIRBOSS.PlayerData
+  local Grade=grade --Ops.Airboss#AIRBOSS.LSOgrade
+  -- Discord bot here
+  local score=tonumber(Grade.points)
+  local name=tostring(PlayerData.name)
+  
+  --- Report LSO grade to dcs.log file.
+  env.info(string.format("Player %s scored %.1f", name, score))
+end
+
 --FIN---------------------------------------------------------------------------------------------------------------------------------------------------------------
 --↓↓ A2A ↓↓---------------------------------------------------------------------------------------------------------------------------------------------------------
 EnemySpawnSector1 = ZONE:New('ZONA_REDA2A_SPAWN01')
