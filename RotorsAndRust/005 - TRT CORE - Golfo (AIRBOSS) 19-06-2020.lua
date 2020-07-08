@@ -209,25 +209,25 @@ navzone10 = ZONE:New("ZONA NAVAL 10")
 
 --↓↓ TABLES ↓↓------------------------------------------------------------------------------------------------------------------------------------------------------
 BriefingBAITable = {
-"Our Navy Seals have seen Enemy troops using this facility. Command has authorised and immediate Strike.", 
-"Command has observed this target from satellite reconnaisance and ordered an airstrike.",
-"Previous airstrikes on this target have missed, the target is now available for replanning.",
-"This is a key Opfor strategic target. Command has designated it for immediate destruction.",
-"One package has marked a new area with enemy target. Command has designated it for immediate destruction .",
+"Recon has identified enemy troops using this facility. Command has authorised an immediate strike.", 
+"Command has observed this target from satellite reconnaissance and ordered a strike.",
+"Previous airstrikes on this target have failed and the target is now available for replanning.",
+"This is a key OPFOR strategic target. Command has designated it for explosive disaassembly.",
+"SIGINT has identified this target as critical to OPFOR C3. Immediate schwacking authorised.",
 }
 
 BriefingSEADTable = {
-"The enemy air defenses begin to be really dangerous in the target area. The high command has ordered a SEAD strike", 
-"Several packages were lost in the target zone, we must reduce the enemy's defensive capacity as soon as possible.",
-"Our recon teams managed to spot a SAM site. The high command orders a SEAD in that area",
-"We have marked a new SAM site. HQ wants those radars disabled as soon as possible",
+"OPFOR air defenses pose a significant threat in the target area. Command has ordered a SEAD strike.", 
+"Several packages have been lost in the target area, and reduction of OPFOR's defensive capacity is a command priority.",
+"Recon teams have identified a previously undiscovered SAM site. SEAD authorised.",
+"Satellite reconnaissance has marked a new SAM site. HQ wants those radars disabled as soon as possible.",
 }
 
 BriefingNAVTable = {
-"Enemy ship in the area. The High Command orders its neutralization", 
-"A new group of bogeys is in the area, engage them asap!",
-"The presence of a new enemy vessel was detected in the area. Destroy it",
-"This ship escaped several times from our attempts to destroy it, hunt it once and for all",
+"Enemy ship in the area. Command orders its neutralisation.", 
+"A new group of ships is in the area, engage them ASAP!",
+"The presence of a new OPFOR vessel was detected in the area. Destroy it.",
+"This ship escaped our attempts to destroy it several times, sink it once and for all.",
 }
 
 
