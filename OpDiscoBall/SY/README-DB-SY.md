@@ -8,6 +8,7 @@ The intent is to expose the pilot to realistic armed reconnaissance operations, 
 * Bomb damage assessment
 * LZ reconnaissance
 * Advance to contact
+* Route clearance
 * Artillery coordination
 * AFAC
 * Hunter-Killer operations
@@ -55,7 +56,7 @@ The Persian Gulf Campaign Area has been divided into columns of longitude, with 
 
 Australia/New Zealand contingent: Task Force Disco Ball
 
-* HQ 7 Brigade
+* HQ 7 Brigade c/s GodRay
   * 2nd/14th Light Horse Regt (Mechanised Infantry) c/s Emu (Abrams) / Stallion (ASLAV)
   * 6th Battalion, Royal Australian Regt (Mechanised Infantry) c/s Bluedog (M113)
   * 8th/9th Battalion, Royal Australian Regt (Motorised Infantry) c/s Merino (Bushmaster)
