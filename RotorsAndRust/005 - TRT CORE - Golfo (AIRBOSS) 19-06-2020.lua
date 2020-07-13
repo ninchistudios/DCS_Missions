@@ -801,6 +801,7 @@ BARCO04 = GROUP:FindByName('⚓ CVN-73 George Washington'):PatrolRoute()
 local WashingtonTCNU = UNIT:FindByName('⚓ CVN-73 George Washington')
 local WashingtonBeacon = WashingtonTCNU:GetBeacon():ActivateTACAN(73, 'X', 'WSN', true):ActivateICLS(3, 'WSN')
 
+--[[
 -- Create AIRBOSS object.
 local AirbossStennis=AIRBOSS:New("⚓ CVN-74 Stennis")
 
@@ -832,6 +833,7 @@ AirbossStennis:SetTrapSheet()
 
 -- Start airboss class.
 AirbossStennis:Start()
+]]--
 
 --- Function called when a player gets graded by the LSO.
 function AirbossStennis:OnAfterLSOGrade(From, Event, To, playerData, grade)
