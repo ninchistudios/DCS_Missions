@@ -63,9 +63,9 @@ Australia/New Zealand contingent: Task Force Disco Ball
   * 2nd Combat Engineer Regt c/s Bastard
   * 7th Combat Signals Regt c/s Wraith
   * 7th Combat Service Support Bn c/s Camel
-  * 163 Recce Sqn (OH58D/SA342) c/s Dropbear
-  * 171 Op Spt Sqn (UH-1H) c/s Bushranger
-* 75 Sqn RAAF (F/A-18) c/s Magpie
+  * 163 Recce Sqn (OH58D/SA342) c/s Dropbear (Dodge) 511/521/531/541
+  * 171 Op Spt Sqn (UH-1H) c/s Bushranger (Dodge) 551/561 310MHz
+* 75 Sqn RAAF (F/A-18) c/s Magpie (Dodge) 571/581
   * RAAF elements incl P-8 Poseidon, E-7A Wedgetail, C130J and UAV
 * HMAS Adelaide (Canberra class Landing Helicopter Dock)
   * HMAS Toowoomba (ANZAC class Frigate)
