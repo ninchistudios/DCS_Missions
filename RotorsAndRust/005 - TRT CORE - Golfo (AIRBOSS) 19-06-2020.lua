@@ -833,7 +833,6 @@ AirbossStennis:SetTrapSheet()
 
 -- Start airboss class.
 AirbossStennis:Start()
-]]--
 
 --- Function called when a player gets graded by the LSO.
 function AirbossStennis:OnAfterLSOGrade(From, Event, To, playerData, grade)
@@ -846,6 +845,8 @@ function AirbossStennis:OnAfterLSOGrade(From, Event, To, playerData, grade)
   --- Report LSO grade to dcs.log file.
   env.info(string.format("Player %s scored %.1f", name, score))
 end
+
+]]--
 
 --FIN---------------------------------------------------------------------------------------------------------------------------------------------------------------
 --↓↓ A2A ↓↓---------------------------------------------------------------------------------------------------------------------------------------------------------
