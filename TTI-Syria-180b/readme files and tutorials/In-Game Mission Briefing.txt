@@ -1,0 +1,210 @@
+Through The Inferno (Dynamic DCS) by deadlyfishes is an endless, dynamic, and open-world PvE experience for DCS World.
+
+______________
+
+Mission attributes such as setting how many ground units and ground unit type at missions and many other options are now editable in the mission editor! Check the tutorial text file how to go about editing the mission settings and what each setting does!
+
+______________
+
+Waypoints for missions are available for:
+F/A-18C, AV-8B, A-10C, and M-2000C
+
+The waypoint of active missions are noted in the intel reports in your F-10 Other Menu.
+
+BULLSEYE is WPT-31
+
+______________
+
+All modern aircraft, both fixed and rotary wing are available with a dynamic mission spawning and tasking menu.
+
+Use your COMMUNICATIONS MENU button to find the tasking menus. (Usually bound to your \ key ).
+______________
+
+A CUSTOM KNEEBOARD WITH A LIST OF TACANS/FREQUENCIES IS AVAILABLE! Usually, you can pull up the kneeboard with K or Shift-K. Use [ to navigate BACKWARDS to find the custom page(s). If those are not the controls for your kneeboard, check your control settings and search for "kneeboard"
+
+Frequencies:
+AWACS:
+"Focus" E-3A - 251 Mhz AM
+
+Tankers:
+KC-135 (Boom) “Texaco” 
+@19,000 FT 270 KTS
+255 Mhz AM 41Y-AA TCN
+
+KC-135 (Boom) “Arco”
+@15,000 FT 205 KTS
+256 Mhz AM 39Y-AA TCN
+
+KC-135 MPRS (Basket) “Shell”
+@19,000 FT 270 KTS
+254 Mhz AM 40Y-AA TCN
+
+AIRBOSS Tanker S-3B (Basket) “Arco” 
+253 Mhz AM 31Y-AA TCN
+
+Carriers:
+LHA-1 Tarawa - 42X TCN
+ATC: 126.5Mhz AM
+
+CVN-7X - 43X TCN
+CRS: Varies (Click on unit while in-game to find HEADING)
+ATC: 225.5Mhz AM
+ICLS - 5
+AIRBOSS AVAILABLE! Details and documentation for use:
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
+
+______________
+
+Available missions:
+
+Air to Air - Spawns a dynamically created enemy element flight. Choose between different difficulties. NOTE: These missions can infinitely stack, but an option is available to prevent stacking of forced air to air missions in the mission settings. It is advised to spawn one at a time, and only spawn new A2A missions when one is complete.
+
+Air to Ground  - The mission will dynamically generate ground targets in a random location. There are several difficulties to choose from:
+
+HARD - SAMs may be present.
+EASY (Multirole) - No SAMs will be present.
+Helo - These missions will spawn closer to the home base.
+Helo Infantry Assault - These missions are designed for dropping off troops and/or utilizing gunship helos.
+Anti-Ship - This will spawn a group of enemy ships.
+
+
+Mission WPT Label definitions (the labels that appear on your HSI/planning tools in-aircraft)
+
+MR - Multirole/A2G Easy
+AG - A2G Hard
+AGH - A2G Helo/Infantry
+
+Labeled same as mission zones in mission editor.
+______________
+
+Other F10 Menu Options:
+
+EWRS - A dynamic AWACS reporting system.
+
+JTAC Status - Shows detailed location information on an active target. 
+
+Intel Menu - You can have target areas smoked as well as get location via GRID, since some airframes cannot utilize LAT/LONG.
+
+Debug Menu - Options to reset Tankers or AWACS if needed.
+
+AIRBOSS Menu (Only on maps with Carrier Ops) - Advanced carrier ops scripts and functions, more details here:
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
+
+AIRBOSS MENU NOT POPPING UP? Try switching slots a few times.
+
+Recovery Helo and Recovery Tankers are available for AIRBOSS!
+
+______________
+
+Smoke Colors (where applicable)
+
+WHITE SMOKE: Ground Target AREA
+RED SMOKE: Marked target by JTAC, lased as well. - Use JTAC status in F10 Other Menu for the laser code
+GREEN SMOKE: CTLD Troop Pickup Zone (can be turned off in the mission settings)
+
+______________
+
+CTLD Menu for Helos:
+
+Troop Pickup: GREEN SMOKE
+Spawn Crates at Troop Pickup Zones near the Stryker Vehicle.
+Some units require several crates to build them.
+Hover over crates to pick them up. (can be set to real sling loading mission settings)
+CTLD Menu not showing up? Try leaving the helo slot for another vehicle and then choose the helo slot again.
+
+Full CTLD usage information:
+https://github.com/ciribob/DCS-CTLD
+
+YOU CAN ENABLE REAL SLINGLOADING OR HOVER SIMULATED LOADING IN THE DEFINE MISSION SETTINGS IN THE MISSION EDITOR TRIGGER LIST.
+______________
+
+CSAR Menu for Helos:
+
+- Rescue player and AI ejected friendlies on the map. Pick them up (Infantry on ground, or use CSAR menus to find their location)
+- Return them to SHIP, AIRFIELD, or FARP
+- You can FORCE a CSAR mission using the "Force CSAR Mission" radio menu option.
+
+Full CSAR usage information:
+https://github.com/ciribob/DCS-CSAR
+
+______________
+
+Super Carrier Static Deck Spawns Menu available! - Super Carrier Maps ONLY.
+
+Big thanks to Redkite for allowing me to add these amazing static deck layouts for the Super Carrker.
+
+You do not have to add these template scripts in yourself, you can simply adjust the layouts using the F10 Menu to add static layouts and remove them. You can mix and match as you please in REAL TIME during the mission.
+
+Layout Scripts Created by Redkite
+https://www.digitalcombatsimulator.com/en/files/3309905/
+https://youtu.be/XONOFbhwbsU
+https://www.youtube.com/user/RedKiteRender/
+______________
+
+AIRBOSS AVAILABLE FOR CARRIER OPS! (Not included on maps where carriers are not present)
+https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.Airboss.html
+______________
+
+AI Helo-Troop Transport Script by 107th Rz and 107th deadlyfishes
+
+In the settings in the mission triggers labeled as:
+"AI TROOP TRANSPORT SETTINGS"
+
+Change in qoutes which mission where you want troops to be dropped off.
+NOTE: The helo will START at the MAIN AIRBASE. A2G Easy/Hard can be quite far from the main airbase. We recommend choosing A2G Inf ASsault or A2G Helo Missions.
+
+
+ai_troops_transport_location = "a2g easy"
+
+choices:
+"a2g helo"
+"a2g infantry assault"
+"a2g easy"
+"a2g hard"
+"none"
+
+CTLD Extract/Pickup DOES WORK with these troops!
+
+______________
+
+"ZEUS" MAP MARKER SPAWNS AND COMMANDS:
+You can CREATE and DESTROY units out of thin air in real-time while the game is running at ANY location you choose on the F10 map, like in "Zeus" mode from ArmA 3.
+
+Call in an AI Helo-Troop Transport:
+1) Place a map marker where you want droops to be dropped off.
+2) Type in the map marker "drop troops here" without the qoutes.
+3) CLOSE the map marker by hitting the X button on the map marker and watch a helo come in to drop off troops at that location!
+4) command troops to do whatever you want. You can even extract/re-deploy them with CTLD.
+
+Create units:
+1) Add a map marker of where you want to create a unit. DO NOT TYPE ANYTHING OR HIT ENTER JUST YET.
+
+2) Type in "-create [NAME OF UNIT YOU WANT TO SPAWN FROM THE LIST]" DO NOT HIT ENTER OR LEAVE THE MARKER ON THE MAP JUST YET.
+Example "-create f14_red" will create an element of REDFOR AI F-14's
+"jtac" and "abrams" are friendly units to use combined arms with. Use the JTAC to spawn it anywhere to get a friend to control it for some fun Co-Op action!
+Also, try creating your own ground attack units using the armor or infantry group spawn for an easier bulk spawn
+
+UNITS CAN BE STACKED! Spawn as many of any unit as you like to create your own ground missions!
+
+SPAWNABLE UNITS LIST:
+[List redacted since now all units from DCS are available to spawn on both BLUE and RED, check zeus spawnable units text file for full list!]
+
+3) Once you type your command in, hit the X button on the map marker (top right of the box) to initiate the spawn.
+
+
+Destroy Ground Units: (Only works for ground units):
+1) Add a map marker on top of the ground units you want to destroy/delete. DO NOT TYPE ANYTHING OR HIT ENTER JUST YET.
+
+2) Type in "-destroy" and hit the X button on the map marker (top right of the box) to rid the area of ground units or ships.
+
+Good for: Removing missions you don't want to complete or deleting your spawned in JTAC or Friendly Combined Arms units you no longer want in your mission.
+WARNING: There is no way to get back friendly ship units, you'll have to restart the mission.
+
+Official Through The Inferno website:
+http://www.throughtheinferno.com
+
+ED Forum Information and Support Forum Post:
+https://forums.eagle.ru/showthread.php?t=175802
+
+Join our Through The Inferno Multiplayer Community Discord:
+https://discord.gg/BRF2pcN
