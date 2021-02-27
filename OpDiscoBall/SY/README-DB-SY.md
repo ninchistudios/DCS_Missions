@@ -1,6 +1,6 @@
 OPERATION DISCO BALL
 
-This campaign puts you in the seat of a armed reconnaissance helicopter during a large scale coalition engagement in Israel and Syria. It is being built with the Gazelle, with the intent to convert it for the Kiowa Warrior on release.
+This campaign puts you in the seat of a armed recon/attack helicopter during a large scale coalition engagement in Israel and Syria. It is being built with the Gazelle, with the intent to convert it for the Kiowa Warrior and Apache on release.
 
 The intent is to expose the pilot to realistic armed reconnaissance operations, including:
 
@@ -42,17 +42,17 @@ Tactical:
 * To locate and destroy the warfighting capability of the IRG
 * To maintain ROE so as to preserve positive relations with Iranian regular forces and civilians
 
-The players are armed reconnaissance pilots of the recently raised Australian 163 Squadron, deployed aboard the HMAS Adelaide LHD in support of the 7th Brigade. Due to ongoing operational issues with the Tiger ARH, 163 Sqn was raised with the OH58D Kiowa Warrior and SA342 Gazelle platforms. The squadron has been supplemented with a number of US, French and British Instructor Pilots to accelerate operational readiness.
+The players are armed reconnaissance pilots of the recently raised Australian 163 Squadron, deployed aboard the new Queen Elizabeth Class carrier HMAS Coffs Harbour in support of the 7th Brigade. Due to ongoing operational issues with the Tiger ARH, 163 Sqn was raised with the OH58D Kiowa Warrior, AH-64D and SA342 Gazelle platforms. The squadron has been supplemented with a number of US, French and British Instructor Pilots to accelerate operational readiness.
 
 SITUATION - FRIENDLY
 
-The Persian Gulf Campaign Area has been divided into columns of longitude, with each column AO the responsibility of a coalition partner or group. The primary coalition partners and their AOs are:
+The Syrian Campaign Area has been divided into rows of latitude, with each row AO the responsibility of a coalition partner or group. The primary coalition partners and their AOs are:
 
-* Misc NATO Members: West of 53°E
-* UK & Canada: 53°E to 55°E
-* USA & Israel: 55°E to 57°E
-* Australia & NZ: 57°E to 58°E
-* France & Spain: East of 58°E
+* Misc NATO Members: 
+* UK & Canada: 
+* USA & Israel: 
+* Australia & NZ: 
+* France & Spain: 
 
 Australia/New Zealand contingent: Task Force Disco Ball
 
@@ -64,11 +64,11 @@ Australia/New Zealand contingent: Task Force Disco Ball
   * 2nd Combat Engineer Regt c/s Bastard
   * 7th Combat Signals Regt c/s Wraith
   * 7th Combat Service Support Bn c/s Camel
-  * 163 Recce Sqn (OH58D/SA342) c/s Dropbear
+  * 163 Recce Sqn (OH58D/AH-64D/SA342) c/s Dropbear
   * 171 Op Spt Sqn (UH-1H) c/s Bushranger
 * 75 Sqn RAAF (F/A-18) c/s Magpie
   * RAAF elements incl P-8 Poseidon, E-7A Wedgetail, C130J and UAV
-* HMAS Adelaide (Canberra class Landing Helicopter Dock)
+* HMAS Coffs Harbour (Queen Elizabeth class carrier)
   * HMAS Toowoomba (ANZAC class Frigate)
   * HMAS Newcastle (Adelaide class Guided Missile Frigate)
   * HMAS Rankin (Collins class submarine)
@@ -102,15 +102,14 @@ Notes:
 * Altitudes in ft, distances in nm or meters as appropriate
 
 Required mods:
-* Juan Carlos LHD https://www.digitalcombatsimulator.com/en/files/3309515/
+* HMAS Queen Elizabeth https://www.digitalcombatsimulator.com/en/files/3315024/
 * Operation Disco Ball skin pack TBC
 * Combined Arms
-* Persian Gulf
-* Gazelle OR Kiowa Warrior
+* Syria Map
+* Gazelle AND/OR Kiowa Warrior AND/OR Apache
 * F/A-18C for fixed wing missions
 * Huey for air assault, hunter killer and CSAR missions
 
 References:
 
 * http://www.adf-serials.com.au/research/callsigns.pdf
-* https://en.wikipedia.org/wiki/Islamic_Revolutionary_Guard_Corps
