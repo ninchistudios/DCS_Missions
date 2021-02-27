@@ -1,6 +1,6 @@
 OPERATION DISCO BALL
 
-This campaign puts you in the seat of a armed recon/attack helicopter during a large scale coalition engagement in Israel and Syria. It is being built with the Gazelle, with the intent to convert it for the Kiowa Warrior and Apache on release.
+This campaign puts you in the seat of a armed recon/attack helicopter during a large scale coalition engagement in Syria and Lebanon. It is being built with the Gazelle, with the intent to add options for the Kiowa Warrior and Apache on release.
 
 The intent is to expose the pilot to realistic armed reconnaissance operations, including:
 
@@ -15,11 +15,12 @@ The intent is to expose the pilot to realistic armed reconnaissance operations, 
 * BAI
 * battlefield security
 * CSAR
+* Escort
 * TBC
 
 SITUATION
 
-It is 2017. Emboldened by political events in the US, and with ever more overt support from Russia, the Supreme Leadership of Iran dramatically stepped up its calls for the destruction of Israel and its support of insurgency against Israeli interests.
+It is 2017. Emboldened by political events in the US, and with ever more overt support from Iran and Russia, the Supreme Leadership of Iran dramatically stepped up its calls for the destruction of Israel and its support of insurgency against Israeli interests.
 
 Following a number of horrific bombings and rocket attacks in Israel and widespread international condemnation, the tensions growing between the Ayatollah and his hawkish Revolutionary Guard, and the moderate President representing the Iranian Army and the majority of the Iranian people, became very obvious. Fearing the seeds of revolution, the Ayatollah cracked down hard internally and the President was forced into exile. Curfews were imposed and Iran is under martial law - leading ordinary Iranians to communicate widespread support for armed removal of the Ayatollah and IRG before the total shutdown of internet access across Iran.
 
@@ -48,11 +49,9 @@ SITUATION - FRIENDLY
 
 The Syrian Campaign Area has been divided into rows of latitude, with each row AO the responsibility of a coalition partner or group. The primary coalition partners and their AOs are:
 
-* Misc NATO Members: 
-* UK & Canada: 
-* USA & Israel: 
-* Australia & NZ: 
-* France & Spain: 
+* NATO Members: North of 36 deg N
+* USA & Canada: South of 35 deg N
+* Australia & NZ: 35 to 36 deg N
 
 Australia/New Zealand contingent: Task Force Disco Ball
 
