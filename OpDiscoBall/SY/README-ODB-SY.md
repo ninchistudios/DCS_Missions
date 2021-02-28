@@ -61,9 +61,9 @@ Elements of the Australian 75 Sqn RAAF (F/A-18C) have been deployed on CVN-73 Ge
 
 The Syrian Campaign Area has been divided into rows of latitude, with each row AO the responsibility of a coalition partner or group. The primary coalition partners and their AOs are:
 
-* NATO Members: North of 36 deg N
-* USA, Canada and Israel: South of 35 deg N
-* Australia & NZ: 35 to 36 deg N
+* NATO Members: AO NORTH - North of 36 deg N
+* USA, Canada and Israel: AO SOUTH - South of 35 deg N
+* Australia & NZ: AO CENTRAL - 35 to 36 deg N
 
 Australia/New Zealand contingent: Task Force Disco Ball under the command of HQ 7 Brigade
 
@@ -98,21 +98,24 @@ Notable allies:
 
 SITUATION - ENEMY
 
-REDFOR:
+REDFOR Aviation Threats:
 
-
-* Su-25 attack aircraft
-* Su-22 fighter-bombers
-* EMB-312 light attack aircraft
-* IL-76, An-74 and Falcon transport
-* Mi-17 and B206 helicopters
-* UAV
-* Numerous ballistic missile systems
-* SA-3 and SA-15 SAM systems
-* MANPADS
-* Motorised, mechanised and airborne infantry
-* 4th-gen armour and self-propelled artillery
-* Towed artillery and ZU-23 AAA
+* Fighter/Attack aircraft:
+  * SAAF Su-22, Su-24, MiG-21, MiG-23, MiG-25, MiG-29
+  * IRAF F-4, Su-22, Su-24, F-5, F-14A, MiG-29A
+  * ISIL MiG-21, L-39
+* Rotary:
+  * SAAF Mi-17, Mi-8, Mi-24, Gazelle
+  * IRAF CH-47, Mi-17, AH-1J
+* Logistics:
+  * SAAF IL-76, An-24, An-26
+  * IRAF C-130, IL-76
+* SAM:
+  * SAAF SA-6, SA-7, SA-8, SA-9, SA-11, SA-13, SA-14, SA-16, SA-18, SA-19, SA-20, SA-22, SA-24
+  * ISIL SA-7, SA-18, Stinger
+* AAA:
+  * SAAF ZSU-57-2, ZSU-23-4, ZPU, ZU-23-2, M1939, S-60, high-calibre machine guns
+  * ISIL ZSU-23-4, ZU-23-2, S-60, high-calibre machine guns
 
 Notes:
 
