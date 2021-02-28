@@ -98,7 +98,8 @@ Notable allies:
 
 SITUATION - ENEMY
 
-TBC
+REDFOR:
+
 
 * Su-25 attack aircraft
 * Su-22 fighter-bombers
