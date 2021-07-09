@@ -79,9 +79,9 @@ Australia/New Zealand contingent: Task Force Disco Ball under the command of HQ 
   * 164 Recce Sqn c/s Dropbear (OH58D) / Bunyip (AH64D) / Hoopsnake (SA342)
   * 171 Op Spt Sqn (UH-1H) c/s Bushranger
   * C Sqn, 5 Avn Regt (S-70A-9) c/s Bronco
-* 75 Sqn RAAF (F/A-18) c/s Magpie
+* 66 Sqn RAAF (F/A-18) c/s Skank
   * RAAF elements incl P-8 Poseidon, E-7A Wedgetail, C130J and UAV
-* HMAS Coffs Harbour c/s Big Banana (Queen Elizabeth class carrier)
+* HMAS Canberra c/s Big Banana (LHD)
   * HMAS Toowoomba (ANZAC class Frigate)
   * HMAS Newcastle (Adelaide class Guided Missile Frigate)
   * HMAS Rankin (Collins class submarine)
@@ -124,7 +124,7 @@ Notes:
 * Altitudes in ft, distances in nm or meters as appropriate
 
 Required mods:
-* HMAS Queen Elizabeth https://www.digitalcombatsimulator.com/en/files/3315024/
+* Operation Disco Ball modpack TBC
 * Operation Disco Ball skin pack TBC
 * Combined Arms (?)
 * Syria Map
