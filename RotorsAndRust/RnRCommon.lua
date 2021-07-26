@@ -1,7 +1,7 @@
 env.info( '*** RNR COMMON START *** ' )
 
 env.info( '*** Initialising Recovery Tanker *** ' )
-local TexacoCVN=RECOVERYTANKER:New("KMART", "Texaco Group")
+local TexacoCVN=RECOVERYTANKER:New("CV73", "TEXACO")
 TexacoCVN:SetTACAN(10, "TXO")
 TexacoCVN:SetRadio(251)
 TexacoCVN:SetCallsign(CALLSIGN.Tanker.Texaco)
@@ -28,6 +28,8 @@ ctld.JTAC_location = true -- shows location of target in JTAC message
 
 ctld.JTAC_lock =  "all" -- "vehicle" OR "troop" OR "all" forces JTAC to only lock vehicles or troops or all ground units
 
-ctld.JTACAutoLase('REAPER1', 1688)
+ctld.JTACAutoLase('BLUE-REAPER-1', 1681)
+ctld.JTACAutoLase('BLUE-REAPER-2', 1682)
+ctld.JTACAutoLase('BLUE-REAPER-3', 1683)
 
 env.info( '*** RNR COMMON END *** ' )
