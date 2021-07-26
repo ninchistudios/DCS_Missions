@@ -1,5 +1,8 @@
 env.info( '*** RNR COMMON START *** ' )
 
+env.info( '*** RNR Initialising Carrier Script *** ' )
+Wrench.carrierSetup("CV73", 30, {"SHELL"})
+
 env.info( '*** Initialising Recovery Tanker *** ' )
 local TexacoCVN=RECOVERYTANKER:New("CV73", "TEXACO")
 TexacoCVN:SetTACAN(10, "TXO")
@@ -7,7 +10,7 @@ TexacoCVN:SetRadio(251)
 TexacoCVN:SetCallsign(CALLSIGN.Tanker.Texaco)
 TexacoCVN:Start(1)
 
-env.info( '*** TODO Initialising JFAC *** ' )
+env.info( '*** RNR Initialising JFAC *** ' )
 
 ctld.JTAC_LIMIT_RED = 10 -- max number of JTAC Crates for the RED Side
 ctld.JTAC_LIMIT_BLUE = 10 -- max number of JTAC Crates for the BLUE Side
