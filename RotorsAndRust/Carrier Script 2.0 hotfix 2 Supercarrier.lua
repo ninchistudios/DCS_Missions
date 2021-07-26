@@ -6,7 +6,7 @@
 		tankers - Carrier bourne tankers to be controlled by script
 			formatted as a table of unit names i.e.
 			{'tanker1', 'tanker2'}
-	
+
 ]]
 if not Wrench then
 	Wrench = {}
@@ -20,7 +20,7 @@ allgroups = mist.DBs.MEgroupsById
 for key,value in pairs(allgroups) do
 	Wrench.Carrier.Groups['all'][#Wrench.Carrier.Groups['all']+1] = value
 end
-CarScript = missionCommands.addSubMenu('Carrier Script' ,nil)
+CarScript = missionCommands.addSubMenu('Mother' ,nil)
 
 Wrench.Carrier.marknumbers = {}
 Wrench.Carrier.Tankmarks = false
@@ -48,7 +48,7 @@ function Wrench.carrierSetup(unit1, LARC, tankers)
 	Wrench.carrierAtIp(unit1)
 	Wrench.Carrier_loop(unit1, distip)
 	mist.scheduleFunction(Wrench.Carrier_loop, {unit1}, timer.getTime() + 10, 10, timer.getTime() + 1/0)
-	
+
 	if tankers then
 		Wrench.Carrier[unit1]['tankmenu'] = missionCommands.addSubMenuForCoalition(Wrench.Carrier[unit1]['coa'],'Tankers' , Wrench.Carrier[unit1]['menu'])
 		Wrench.Carrier_tankerStartupInfo(unit1,tankers)
@@ -61,7 +61,7 @@ function Wrench.carrier_startupInfo(unit1)
 	trigger.action.setUserFlag(Wrench.Carrier[unit1]['name'], 1)
 	Wrench.Carrier[unit1]['startpos'] = Wrench.Carrier[unit1]["unit"]:getPosition().p
 	Wrench.Carrier[unit1]['returning'] = false
-	Wrench.Carrier[unit1]['override'] = false	
+	Wrench.Carrier[unit1]['override'] = false
 	Wrench.Carrier[unit1]['stop'] = false
 	Wrench.Carrier[unit1]['coa'] = Unit.getCoalition(Wrench.Carrier[unit1]["unit"])
 	Wrench.Carrier[unit1]['group'] = Unit.getGroup(Wrench.Carrier[unit1]["unit"])
@@ -99,15 +99,15 @@ function Wrench.carrierAtIp(unit1)
 	ipzone[2] = {x = ((math.cos(1.5708) * 500) + Wrench.Carrier[unit1]['startpos'].x), z = ((math.sin(1.5708) * 500) + Wrench.Carrier[unit1]['startpos'].z), y = 0}
 	ipzone[3] = {x = ((math.cos(3.14159) * 500) + Wrench.Carrier[unit1]['startpos'].x), z = ((math.sin(3.14159) * 500) + Wrench.Carrier[unit1]['startpos'].z), y = 0}
 	ipzone[4] = {x = ((math.cos(4.71239) * 500) + Wrench.Carrier[unit1]['startpos'].x), z = ((math.sin(4.71239) * 500) + Wrench.Carrier[unit1]['startpos'].z), y = 0}
-	local vars = 
+	local vars =
 		{
-		units = unittable, 
-		zone = ipzone, 
+		units = unittable,
+		zone = ipzone,
 		flag = Wrench.Carrier[unit1]['name'],
-		stopFlag = nil, 
-		maxalt = 200, 
-		req_num = 1, 
-		interval = 1, 
+		stopFlag = nil,
+		maxalt = 200,
+		req_num = 1,
+		interval = 1,
 		toggle = true,
 		}
 	mist.flagFunc.units_in_polygon(vars)
@@ -118,7 +118,7 @@ function Wrench.CarrierToIp(unit1)
 	local retdir = mist.utils.getDir(Wrench.Carrier[unit1]['position'] , Wrench.Carrier[unit1]['startpos'])
 	local new = {}
 		local new = {x = ((math.cos(retdir+0.785398) * 1500) + Wrench.Carrier[unit1]['position'].x), z = ((math.sin(retdir+0.785398) * 1500) + Wrench.Carrier[unit1]['position'].z), y = 0}
-	local path = {} 
+	local path = {}
 	path[#path + 1] = mist.ground.buildWP(Wrench.Carrier[unit1]['position'], 'Diamond', 5.14444)
 	path[#path + 1] = mist.ground.buildWP(new, 'Diamond', 5.14444)
 	path[#path + 1] = mist.ground.buildWP(Wrench.Carrier[unit1]['startpos'], 'Diamond', 30.3522)
@@ -175,12 +175,12 @@ function Wrench.Carrier_Larc(unit1)
 	end
 end
 function Wrench.Carrier_shipShore(unit1)
-	local lookAheadPos = 
+	local lookAheadPos =
 	{
-		x = ((math.cos(Wrench.Carrier[unit1]['heading']) * 18520) + Wrench.Carrier[unit1]['position'].x), 
-		z = ((math.sin(Wrench.Carrier[unit1]['heading']) * 18520) + Wrench.Carrier[unit1]['position'].z), 
+		x = ((math.cos(Wrench.Carrier[unit1]['heading']) * 18520) + Wrench.Carrier[unit1]['position'].x),
+		z = ((math.sin(Wrench.Carrier[unit1]['heading']) * 18520) + Wrench.Carrier[unit1]['position'].z),
 		y = Wrench.Carrier[unit1]['position'].y
-	}		
+	}
 	local surfType = land.getSurfaceType(mist.utils.makeVec2(lookAheadPos))
 	if surfType == 3 then
 		return false
@@ -191,7 +191,7 @@ end
 function Wrench.Carrier_Speed(unit1,dir,speed)
 	if (Wrench.Carrier[unit1]['heading'] < dir+0.523599) and (Wrench.Carrier[unit1]['heading'] > dir-0.523599) then
 		return speed
-	else 
+	else
 		return 5.14444
 	end
 end
@@ -199,13 +199,13 @@ function Wrench.Carrier_goDirection(unit1,dir,speed)
 	if Wrench.Carrier[unit1]['position'] ~= nil then
 		local group1 = Wrench.Carrier[unit1]['group']
 		local new = {}
-		local new = 
+		local new =
 		{
-			x = ((math.cos(dir) * 1000) + Wrench.Carrier[unit1]['position'].x), 
-			z = ((math.sin(dir) * 1000) + Wrench.Carrier[unit1]['position'].z), 
+			x = ((math.cos(dir) * 1000) + Wrench.Carrier[unit1]['position'].x),
+			z = ((math.sin(dir) * 1000) + Wrench.Carrier[unit1]['position'].z),
 			y = 0
 		}
-		local path = {} 
+		local path = {}
 			path[#path + 1] = mist.ground.buildWP(Wrench.Carrier[unit1]['position'], 'Diamond', Wrench.Carrier_Speed(unit1,dir,speed))
 			path[#path + 1] = mist.ground.buildWP(new, 'Diamond', Wrench.Carrier_Speed(unit1,dir,speed))
 		mist.goRoute(group1 ,path)
@@ -218,28 +218,28 @@ function Wrench.Carrier_carrierMenu(unit1)
 		local grpName = Wrench.Carrier.Groups[Wrench.Carrier[unit1]['coa']][i]["groupName"]
 		missionCommands.addCommandForGroup(
 			gid,
-			('Get informtion for '..unit1), 
-			Wrench.Carrier[unit1]['menu'],function() 
+			('Recovery Data for '..unit1),
+			Wrench.Carrier[unit1]['menu'],function()
 			trigger.action.outTextForGroup(
-				gid, 
-				Wrench.Carrier_menu_buildText(unit1,grpName), 
-				30 , false) 
+				gid,
+				Wrench.Carrier_menu_buildText(unit1,grpName),
+				30 , false)
 			end, nil)
 
 		missionCommands.addCommandForGroup(
 			gid,
-			('Toggle '..unit1..' Override'), 
-			Wrench.Carrier[unit1]['menu'],function() 
+			('Toggle '..unit1..' Recovery Ops'),
+			Wrench.Carrier[unit1]['menu'],function()
 			trigger.action.outTextForGroup(
-				gid, 
-				Wrench.Carrier_menu_toggleOverride(unit1), 
-				30 , false) 
+				gid,
+				Wrench.Carrier_menu_toggleOverride(unit1),
+				30 , false)
 			end, nil)
-		
+
 	end
 end
 function Wrench.Carrier_menu_toggleOverride(unit1)
-	local overrideStatus = 'Override Off' 
+	local overrideStatus = 'Override Off'
 	if Wrench.Carrier[unit1]['override'] then
 		Wrench.Carrier[unit1]['override'] = false
 		overrideStatus = 'Override Off'
@@ -247,7 +247,7 @@ function Wrench.Carrier_menu_toggleOverride(unit1)
 		Wrench.Carrier[unit1]['returning'] = false
 		Wrench.Carrier[unit1]['override'] = true
 		overrideStatus = 'Override On'
-	end 
+	end
 	return overrideStatus
 end
 function Wrench.Carrier_menu_buildText(unit1,grp)
@@ -262,16 +262,16 @@ function Wrench.Carrier_menu_buildText(unit1,grp)
 	text = text .. tostring('\tChannel: ' .. Wrench.Carrier[unit1]['tacan']["channel"] or 'N/A')
 	text = text .. tostring(Wrench.Carrier[unit1]['tacan']["modeChannel"] or 'N/A') .. '\n'
 	text = text ..  tostring('ICLS: ' .. Wrench.Carrier[unit1]['ICLS']["channel"] or 'N/A') .. '\n'
-	
+
 	return text
 end
 function Wrench.get_carpos_BR(unit1,leadpos)
 	local unit1pos = Unit.getByName(unit1):getPosition().p
 	local magvar =  mist.getNorthCorrection(unit1pos)
-	local vars = 
-	{	
-		units = {unit1} , 
-		ref = leadpos, 
+	local vars =
+	{
+		units = {unit1} ,
+		ref = leadpos,
 		alt = false,
 		metric = false,
 	}
@@ -293,18 +293,18 @@ function Wrench.Carrier_menu_position(unit1,leadpos)
 	local SecondsNorthing = mist.utils.round((MinutesNorthing-math.floor(MinutesNorthing))*60)
 	local SecondsEasting = mist.utils.round((MinutesEasting-math.floor(MinutesEasting))*60)
 	local EastingDir = 'E'
-	
+
 	if MinutesEasting < 0 then
 		MinutesEasting = math.abs(MinutesEasting)
 		Eastingdir = 'W'
 	else
 		Eastingdir = 'E'
 	end
-	--text = 'Coordinates: ' .. 
+	--text = 'Coordinates: ' ..
 	text = string.format("%02d",DegreesNorthing) .. '°' ..
 		string.format("%02d",math.floor(MinutesNorthing)) .. "'" ..
-		string.format("%02d",SecondsNorthing) .. '"N, ' .. 
-		string.format("%02d",DegreesEasting) .. '°' .. 
+		string.format("%02d",SecondsNorthing) .. '"N, ' ..
+		string.format("%02d",DegreesEasting) .. '°' ..
 		string.format("%02d",math.floor(MinutesEasting)) .. "'" ..
 		string.format("%02d",SecondsEasting) .. '"'..Eastingdir
 	return text
@@ -313,7 +313,7 @@ function Wrench.Carrier_menu_querymode(unit1)
 	local brc = Wrench.Carrier[unit1]['brc']
 	local heading = mist.utils.toDegree(Wrench.Carrier[unit1]['heading'])
 	local text = ''
-	if Wrench.Carrier[unit1]['returning'] then 
+	if Wrench.Carrier[unit1]['returning'] then
 		text = 'Returning'
 		if Wrench.Carrier[unit1]['estimated return time'] then
 			text = 'Returning, CHARLIE in ' .. tostring(math.floor(Wrench.Carrier[unit1]['estimated return time']/60)-2) .. ' minutes.'
@@ -366,19 +366,19 @@ function Wrench.Carrier_TankerMenu(unit1,tanker)
 		local grpName = Wrench.Carrier.Groups[Wrench.Carrier[unit1]['coa']][i]["groupName"]
 		missionCommands.addCommandForGroup(
 			gid,
-			('Get informtion for '..Wrench.Carrier[unit1][tanker]['callsign']), 
-			Wrench.Carrier[unit1]['tankmenu'],function() 
+			('Refuel Data for '..Wrench.Carrier[unit1][tanker]['callsign']),
+			Wrench.Carrier[unit1]['tankmenu'],function()
 			trigger.action.outTextForGroup(
-				gid, 
-				Wrench.Carrier_tanker_menu_buildText(unit1,grpName,tanker), 
-				30 , false) 
+				gid,
+				Wrench.Carrier_tanker_menu_buildText(unit1,grpName,tanker),
+				30 , false)
 		end, nil)
 
-		
+
 		missionCommands.addCommandForGroup(
 			gid,
-			('Spawn ' .. Wrench.Carrier[unit1][tanker]['callsign']), 
-			Wrench.Carrier[unit1]['tankmenu'],function() 
+			('Launch ' .. Wrench.Carrier[unit1][tanker]['callsign']),
+			Wrench.Carrier[unit1]['tankmenu'],function()
 			spawntanker = mist.respawnGroup(Wrench.Carrier[unit1][tanker]['group']:getName(),true)
 			spawntanker = spawntanker["units"][1]["name"]
 			mist.scheduleFunction(Wrench.orbit_carrier, {unit1, spawntanker,Wrench.Carrier[unit1]['brc']}, timer.getTime() + 5, 1, timer.getTime() + 6)
@@ -395,7 +395,7 @@ function Wrench.Carrier_tanker_menu_buildText(unit1,grp,tanker)
 	text = text .. 'Bearing/Range: ' .. select(1,Wrench.get_carpos_BR(unit1,leadpos)) .. '\t\t\t\t\t\t\t'
 	text = text .. select(2,Wrench.get_carpos_BR(unit1,leadpos)) .. '\n'
 	text = text ..  Wrench.Carrier_menu_position(tanker,leadpos)
-	
+
 	return text
 end
 
@@ -407,7 +407,7 @@ function Wrench.orbit_carrier(carrier,tanker,dir)
 	end
 	local durrad = mist.utils.toRadian(dir+7)
 	local carpos = Unit.getByName(carrier):getPosition().p
-	local airpos = Unit.getByName(tanker):getPosition().p	
+	local airpos = Unit.getByName(tanker):getPosition().p
 	local group1 = Unit.getByName(tanker):getGroup()
 	local track = {}
 	local path = {}
@@ -416,7 +416,7 @@ function Wrench.orbit_carrier(carrier,tanker,dir)
 	track[3] = {x = ((math.cos(durrad - 1.5708) * 3*1852) + track[2].x), z = ((math.sin(durrad - 1.5708) * 3*1852) + track[2].z), y = 1828.8}
 	track[4] = {x = ((math.cos(durrad - 3.14159) * 3*1852) + track[3].x), z = ((math.sin(durrad - 3.14159) * 3*1852) + track[3].z), y = 1828.8}
 	track[5] = {x = ((math.cos(durrad - 4.71239) * 3*1852) + track[4].x), z = ((math.sin(durrad - 4.71239) * 3*1852) + track[4].z), y = 1828.8}
-	
+
 	if Wrench.Carrier.Tankmarks then
 		for i=1, #track do
 			Wrench.Carrier.marknumbers[#Wrench.Carrier.marknumbers+1] = track[i]
@@ -425,7 +425,7 @@ function Wrench.orbit_carrier(carrier,tanker,dir)
 			trigger.action.markToAll(i, tostring(i), Wrench.Carrier.marknumbers[i] , false, nil)
 		end
 	end
-	
+
 	for i = 1, #track do
 		path[i] = mist.fixedWing.buildWP(track[i], 'turningpoint' ,169.767 ,457.2 ,'Baro' )
 	end
@@ -434,28 +434,28 @@ function Wrench.orbit_carrier(carrier,tanker,dir)
 	path[i]= -- needed to keep tanker tanking
 	{
 		--retain original keys&values
-		["alt"] = path[i]["alt"], 
-		["x"] = path[i]["x"], 
-		["action"] = path[i]["action"], 
-		["alt_type"] = path[i]["alt_type"], 
-		["speed"] = path[i]["speed"], 
-		["type"] = path[i]["type"], 
+		["alt"] = path[i]["alt"],
+		["x"] = path[i]["x"],
+		["action"] = path[i]["action"],
+		["alt_type"] = path[i]["alt_type"],
+		["speed"] = path[i]["speed"],
+		["type"] = path[i]["type"],
 		["y"] = path[i]["y"],
-		--add tasking		
-		["task"] = 
+		--add tasking
+		["task"] =
 		{
 			["id"] = "ComboTask",
-			["params"] = 
+			["params"] =
 			{
-				["tasks"] = 
+				["tasks"] =
 				{
-					[1] = 
+					[1] =
 					{
 						["enabled"] = true,
 						["auto"] = true,
 						["id"] = "Tanker",
 						["number"] = 1,
-						["params"] = 
+						["params"] =
 						{
 						},
 					},
@@ -464,34 +464,34 @@ function Wrench.orbit_carrier(carrier,tanker,dir)
 		},
 	}
 	end
-	
+
 	path[5]=
 	{
 		--retain original keys&values
-		["alt"] = path[5]["alt"], 
-		["x"] = path[5]["x"], 
-		["action"] = path[5]["action"], 
-		["alt_type"] = path[5]["alt_type"], 
-		["speed"] = path[5]["speed"], 
-		["type"] = path[5]["type"], 
+		["alt"] = path[5]["alt"],
+		["x"] = path[5]["x"],
+		["action"] = path[5]["action"],
+		["alt_type"] = path[5]["alt_type"],
+		["speed"] = path[5]["speed"],
+		["type"] = path[5]["type"],
 		["y"] = path[5]["y"],
-		--add tasking		
-		["task"] = 
+		--add tasking
+		["task"] =
 		{
 			["id"] = "ComboTask",
-			["params"] = 
+			["params"] =
 			{
-				["tasks"] = 
+				["tasks"] =
 				{
-					["tasks"] = 
+					["tasks"] =
 					{
-						[1] = 
+						[1] =
 						{
 							["enabled"] = true,
 							["auto"] = true,
 							["id"] = "Tanker",
 							["number"] = 1,
-							["params"] = 
+							["params"] =
 							{
 							},
 						},
@@ -502,25 +502,25 @@ function Wrench.orbit_carrier(carrier,tanker,dir)
 						["auto"] = false,
 						["id"] = "WrappedAction",
 						["number"] = 1,
-						["params"] = 
+						["params"] =
 						{
-							["action"] = 
+							["action"] =
 							{
 								["id"] = "Script",
-								["params"] = 
+								["params"] =
 								{
 									["command"] = funcstring,
 								}, -- end of ["params"]
 							}, -- end of ["action"]
 						}, -- end of ["params"]
 					}, -- end of [1]
-					[2] = 
+					[2] =
 					{
 						["number"] = 2,
 						["enabled"] = true,
 						["auto"] = true,
 						["id"] = "Tanker",
-						["params"] = 
+						["params"] =
 						{
 						},-- end of ["params"]
 					},-- end of [2]
@@ -537,12 +537,12 @@ function Wrench.orbit_carrier(carrier,tanker,dir)
 		path[1]=
 		{
 		--retain original keys&values
-			["alt"] = 100, 
-			["x"] = path[1]["x"], 
+			["alt"] = 100,
+			["x"] = path[1]["x"],
 			["action"] = "Landing",
-			["alt_type"] = path[1]["alt_type"], 
-			["speed"] = path[1]["speed"], 
-			["type"] = path[1]["type"], 
+			["alt_type"] = path[1]["alt_type"],
+			["speed"] = path[1]["speed"],
+			["type"] = path[1]["type"],
 			["y"] = path[1]["y"],
 		}
 	end
