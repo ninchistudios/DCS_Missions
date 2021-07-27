@@ -1,16 +1,19 @@
-env.info( '*** RNR COMMON START *** ' )
+env.info( '*** OP OLIGARCH START *** ' )
 
-env.info( '*** RNR Initialising Carrier Script *** ' )
-Wrench.carrierSetup("CV73", 30, {"SHELL"})
+env.info( '*** Initialising Carrier Script *** ' )
+-- # Wrench.carrierSetup("RTFM", 30, {"SCM_ARCO"})
 
-env.info( '*** Initialising Recovery Tanker *** ' )
-local TexacoCVN=RECOVERYTANKER:New("CV73", "TEXACO")
-TexacoCVN:SetTACAN(10, "TXO")
-TexacoCVN:SetRadio(251)
-TexacoCVN:SetCallsign(CALLSIGN.Tanker.Texaco)
-TexacoCVN:Start(1)
+env.info( '*** Initialising AWACS *** ' )
+local awacsCV=RECOVERYTANKER:New("RTFM", "SCM_DARKSTAR")
+awacsCV:SetAWACS()
+awacsCV:SetCallsign(CALLSIGN.AWACS.DARKSTAR, 1)
+-- awacsCV:SetTakeoffAir()
+awacsCV:SetAltitude(20000)
+awacsCV:SetRadio(261)
+awacsCV:SetTACAN(11, "DRK")
+awacsCV:Start()
 
-env.info( '*** RNR Initialising JFAC *** ' )
+env.info( '*** Initialising JFAC *** ' )
 
 ctld.JTAC_LIMIT_RED = 10 -- max number of JTAC Crates for the RED Side
 ctld.JTAC_LIMIT_BLUE = 10 -- max number of JTAC Crates for the BLUE Side
@@ -31,8 +34,6 @@ ctld.JTAC_location = true -- shows location of target in JTAC message
 
 ctld.JTAC_lock =  "all" -- "vehicle" OR "troop" OR "all" forces JTAC to only lock vehicles or troops or all ground units
 
-ctld.JTACAutoLase('BLUE-REAPER-1', 1681)
-ctld.JTACAutoLase('BLUE-REAPER-2', 1682)
-ctld.JTACAutoLase('BLUE-REAPER-3', 1683)
+-- ctld.JTACAutoLase('BLUE-REAPER-1', 1681)
 
-env.info( '*** RNR COMMON END *** ' )
+env.info( '*** OP OLIGARCH END *** ' )
