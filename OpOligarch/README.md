@@ -6,8 +6,8 @@
 
 Operation Oligarch is a co-op incremental campaign, which works as follows:
 
-* The Initial conditions are set.
-* An Air Tasking Order is raised.
+* The Initial conditions are set, and he players are provided with SITREP/INTREP.
+* An Air Tasking Order is raised - possibly planned by the pilots who will fly it.
 * The players prepare for and fly the mission. Once only, no mulligans.
 * Based on the results of the mission, the situation changes and a new mission is prepared.
 * Repeat until... well realistically until the mission designers lose interest.
@@ -15,7 +15,7 @@ Operation Oligarch is a co-op incremental campaign, which works as follows:
 ### SOP
 
 * Do not change aircraft loadouts
-* destroyed SCM assets take 5 missions to replenish
+* destroyed SCM assets take 5 missions to replenish - be careful with your jets and protect the ships.
 * Default Aircraft BORTs:
   * Psycho: 101 SKANK1
   * Dudrounds: 102 SKANK2
@@ -41,7 +41,7 @@ The players are pilots of the SCM 1st Corps (c/s Skank) operating FA/18-C, F-14B
 
 ## Situation - Strategic
 
-The SCM have entered the Guam Coastal ADIZ and currently sit approx 65nm northeast of Saipan. While the MILF have dug in on Guam and Rota, Saipan and Tinian to the north are relatively lightly defended, and the MILF Air Force (MILFAF) is under-supplied, giving the SCM an opportunity to seize air superiority if it can be achieved quickly. MILF are not known to possess a CV at this time, so if the 5 Marianas airfields can be degraded, MILFAF will be unable to launch air assets.
+The SCM have entered the Guam Coastal ADIZ and currently sit approx 65nm northeast of Saipan. While the MILF have dug in on Guam and Rota, Saipan and Tinian to the north are relatively lightly defended, and the MILF Air Force (MILFAF) is under-supplied, giving the SCM an opportunity to seize air superiority if it can be achieved quickly. MILFs are not known to possess a CV at this time, so if the 5 Marianas airfields can be degraded, MILFAF will be unable to launch air assets.
 
 SCM intend to establish and defend a foothold on Saipan, consolidate Tinian, and from there push south to retake Rota and Guam.
 
@@ -60,11 +60,12 @@ RTFM Assets:
 * 4 x F-14B
 * 2 x E2-D
 * 2 x S-3B
+* 2 x UH-1H
 
 PEBKAC Assets:
 
 * 4 x AV-8B
-* 4 x UH-1H
+* 2 x UH-1H
 * 4 x SA342
 * Mechanised Battalion+ strength marine infantry with supporting assets
 
@@ -84,7 +85,10 @@ MILF forces may possess virtually any equipment purchased on the open and black 
 
 ## Mission - SCM
 
-* BULLSEYE WPT 10
+* BULLSEYE WPT 10.
+* Positive hostile ID (visual, AWACS DECLARE, NCTR) required.
+* NOGO south of WP8-WP9 line.
+
 
 ### Callsigns & Frequencies
 
