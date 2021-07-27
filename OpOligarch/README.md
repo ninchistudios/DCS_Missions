@@ -37,7 +37,7 @@ While the SpaceX Colonial Marine group was preparing in San Diego, and once the 
 
 The SpaceX Colonial Marines (SCM) are now faced with the prospect of retaking the Marianas from the Ma International Liberation Force (MILF) and defending them from any and all civilian and insurgent threats while orbital infrastructure is built on Rota and Saipan.
 
-The players are pilots of the SCM 1st Corps (c/s Skank) operating FA/18-C, F-14B, AV-8B, UH-1H and SA-342.  Delivery of AH-64D and OH-58D, among other types, is currently being negotiated.
+The players are pilots of the SCM 1st Corps (c/s SKANK) operating FA/18-C, F-14B, AV-8B, UH-1H and SA-342.  Delivery of AH-64D and OH-58D, among other types, is currently being negotiated.
 
 ## Situation - Strategic
 
@@ -81,13 +81,13 @@ MILF forces may possess virtually any equipment purchased on the open and black 
 * SA-15, ZSU-23-4/ZU-23 and MANPAD air defence
 * JF-17 and Su-25
 * A-50 AWACS
-* IL-78 Tankers
+* IL-76 Transports
 
 ## Mission - SCM
 
-* BULLSEYE WPT 10.
+* BULLSEYE WPT 6.
 * Positive hostile ID (visual, AWACS DECLARE, NCTR) required.
-* NOGO south of WP8-WP9 line.
+* NOGO south of WP4-WP5 line.
 
 
 ### Callsigns & Frequencies
@@ -97,3 +97,13 @@ MILF forces may possess virtually any equipment purchased on the open and black 
 * ARCO-8 (S-3B Basket) 253 (Bu1Ch3) TACAN 10Y-AA ARC
 * PONTIAC-7 (Reaper JTAC) 254 (Bu1Ch4) Code 1681-1684
 * DARKSTAR-8 (E-2D AWACS) 261 (Bu2Ch1) TACAN 11Y-AA DRK
+
+# Mission Checks
+
+* Route, Speeds and Heights, Takeoff and Landing, 12 Min M0.2 Leg 1
+* Unit naming - no dashes, consistent
+* Skins, callsigns and BORTs
+* Bullseye at ground level
+* Briefing
+* Scripts refreshed
+* Triggers tested
