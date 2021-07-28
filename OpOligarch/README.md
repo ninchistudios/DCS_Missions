@@ -6,7 +6,7 @@
 
 Operation Oligarch is a co-op incremental campaign, which works as follows:
 
-* The Initial conditions are set, and he players are provided with SITREP/INTREP.
+* The Initial conditions are set, and the players are provided with SITREP/INTREP.
 * An Air Tasking Order is raised - possibly planned by the pilots who will fly it.
 * The players prepare for and fly the mission. Once only, no mulligans (unless there's a bug in the mission that needs a restart).
 * Based on the results of the mission, the situation changes and a new mission is prepared.
@@ -14,13 +14,14 @@ Operation Oligarch is a co-op incremental campaign, which works as follows:
 
 ### SOP
 
-* Do not change aircraft loadouts
+* Do not change aircraft loadouts or skins.
 * destroyed SCM assets take 5 missions to replenish - be careful with your jets and protect the ships.
 * Default Aircraft BORTs:
   * Psycho: 101 SKANK1
   * Dudrounds: 102 SKANK2
   * Burnzoire: 103 SKANK3
   * Schmeardo: 104 SKANK4
+  * Plastikqs/Apsord: 105 SKANK5
   * Ruprecht: 066 SKANK6
 
 ### Required Downloads
@@ -69,7 +70,7 @@ PEBKAC Assets:
 * 4 x SA342
 * Mechanised Battalion+ strength marine infantry with supporting assets
 
-Munitions:
+Supply:
 * Currently no AIM-120, late model AIM-9 or precision guided bombs.
 
 Replenishment:
@@ -93,7 +94,7 @@ SKANK will conduct DEAD operations on Saipan with CAP cover, to establish air su
 Package DOGE:
 * SKANK1 - DEAD Lead (F/A-18) - HARM and Laser AGM-65
 * SKANK6 - DEAD 2 (F/A-18) - HARM and Laser AGM-65
-* SKANK5 - DEAD 3 (AV-8B) - SIDEARM and Laser AGM-65
+* SKANK5 - DEAD 3 (AV-8) - SIDEARM and Laser AGM-65
 * SKANK3 - CAP Lead (F-14)
 * SKANK2 - DEAD/CAP multirole (F/A-18) - HARM and Laser AGM-65
 * SKANK4 - DEAD/CAP multirole (F/A-18) - HARM and Laser AGM-65
@@ -115,8 +116,8 @@ ROE:
 
 ### Callsigns & Frequencies
 
-* RTFM (CVN-73) 251 (Bu1Ch1) TACAN 73X RTFM ICLS 3
-* PEBKAC (LHA-1) 252 (Bu1Ch2) TACAN 71X PEKC ICLS 1
+* RTFM/MOTHER (CVN-73) 251 (Bu1Ch1) TACAN 73X RTM ICLS 3
+* PEBKAC (LHA-1) 252 (Bu1Ch2) TACAN 71X PEC ICLS 1
 * ARCO-8 (S-3B Basket) 253 (Bu1Ch3) TACAN 10Y-AA ARC
 * PONTIAC-7 (Reaper JTAC) 254 (Bu1Ch4) Code 1681-1684
 * DARKSTAR-8 (E-2D AWACS) 261 (Bu2Ch1) TACAN 11Y-AA DRK
@@ -125,7 +126,7 @@ ROE:
 # Mission Checks
 
 * Route, Speeds and Heights, Takeoff and Landing, 12 Min M0.2 Leg 1
-* Unit naming - no dashes, consistent
+* Unit naming - no dashes in groups, consistent
 * Skins, callsigns and BORTs
 * Bullseye at ground level
 * Briefing
@@ -135,4 +136,4 @@ ROE:
 
 # Recordings
 
-* "DOGE, ACORN. Popup group bullseye two zero eight for nine, hostile A N fifty, low level, tracking south. Priority intercept, buster, weapons hot. Do not violate NOGO."
+* "DOGE, ACORN. Popup group, bullseye two zero eight for nine, hostile A N fifty, low level, tracking south. Priority intercept, buster, weapons hot. Do not violate NOGO."
