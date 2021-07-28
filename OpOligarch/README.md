@@ -87,9 +87,9 @@ MILF forces may possess virtually any equipment purchased on the open and black 
 * A-50 AWACS
 * IL-76 Transports
 
-## Mission - SCM ATO
+## Mission - SCM ATO 27069
 
-SKANK will conduct DEAD operations on Saipan with CAP cover, to establish air superiority.
+SKANK will conduct DEAD operations on Saipan with CAP cover, to degrade SAM threat as part of establishing air superiority.
 
 Package DOGE:
 * SKANK1 - DEAD Lead (F/A-18) - HARM and Laser AGM-65
@@ -101,8 +101,8 @@ Package DOGE:
 
 Flight Plan:
 * BULLSEYE WPT 6.
-* CAP depart first and take station WP2-WP3 outside 20nm SAM threat area, weapons free. Primary responsibility for A2A targets.
-* DEAD depart second and engage TOO on Saipan, prioritising the north of Saipan. Defensive A2A only.
+* CAP depart 1510 and take station WP2-WP3 CAP ALPHA outside 20nm SAM threat area, weapons free. Primary responsibility for A2A targets.
+* DEAD depart 1512 and engage AD TOO on Saipan, prioritising the north of Saipan. Defensive A2A only.
 * DEAD recover first when winchester in fuel state order.
 * CAP recover second in fuel state order.
 * Recovery Tanker available from T+30M.
