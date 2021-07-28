@@ -8,7 +8,7 @@ Operation Oligarch is a co-op incremental campaign, which works as follows:
 
 * The Initial conditions are set, and he players are provided with SITREP/INTREP.
 * An Air Tasking Order is raised - possibly planned by the pilots who will fly it.
-* The players prepare for and fly the mission. Once only, no mulligans.
+* The players prepare for and fly the mission. Once only, no mulligans (unless there's a bug in the mission that needs a restart).
 * Based on the results of the mission, the situation changes and a new mission is prepared.
 * Repeat until... well realistically until the mission designers lose interest.
 
@@ -41,7 +41,7 @@ The players are pilots of the SCM 1st Corps (c/s SKANK) operating FA/18-C, F-14B
 
 ## Situation - Strategic
 
-The SCM have entered the Guam Coastal ADIZ and currently sit approx 65nm northeast of Saipan. While the MILF have dug in on Guam and Rota, Saipan and Tinian to the north are relatively lightly defended, and the MILF Air Force (MILFAF) is under-supplied, giving the SCM an opportunity to seize air superiority if it can be achieved quickly. MILFs are not known to possess a CV at this time, so if the 5 Marianas airfields can be degraded, MILFAF will be unable to launch air assets.
+The SCM have entered the Guam Coastal ADIZ and currently sit approx 65nm northeast of Saipan [MAP 1]. While the MILF have dug in on Guam and Rota, Saipan and Tinian to the north are relatively lightly defended, and the MILF Air Force (MILFAF) is under-supplied, giving the SCM an opportunity to seize air superiority if it can be achieved quickly. MILFs are not known to possess a CV at this time, so if the 5 Marianas airfields can be degraded, MILFAF will be unable to launch air assets.
 
 SCM intend to establish and defend a foothold on Saipan, consolidate Tinian, and from there push south to retake Rota and Guam.
 
@@ -58,16 +58,19 @@ RTFM Assets:
 
 * 8 x F/A-18C
 * 4 x F-14B
+* 4 x AV-8B
 * 2 x E2-D
 * 2 x S-3B
 * 2 x UH-1H
 
 PEBKAC Assets:
 
-* 4 x AV-8B
 * 2 x UH-1H
 * 4 x SA342
 * Mechanised Battalion+ strength marine infantry with supporting assets
+
+Munitions:
+* Currently no AIM-120, late model AIM-9 or precision guided bombs.
 
 Replenishment:
 
@@ -83,20 +86,41 @@ MILF forces may possess virtually any equipment purchased on the open and black 
 * A-50 AWACS
 * IL-76 Transports
 
-## Mission - SCM
+## Mission - SCM ATO
 
+SKANK will conduct DEAD operations on Saipan with CAP cover, to establish air superiority.
+
+Package DOGE:
+* SKANK1 - DEAD Lead (F/A-18) - HARM and Laser AGM-65
+* SKANK6 - DEAD 2 (F/A-18) - HARM and Laser AGM-65
+* SKANK5 - DEAD 3 (AV-8B) - SIDEARM and Laser AGM-65
+* SKANK3 - CAP Lead (F-14)
+* SKANK2 - DEAD/CAP multirole (F/A-18) - HARM and Laser AGM-65
+* SKANK4 - DEAD/CAP multirole (F/A-18) - HARM and Laser AGM-65
+
+Flight Plan:
 * BULLSEYE WPT 6.
+* CAP depart first and take station WP2-WP3 outside 20nm SAM threat area, weapons free. Primary responsibility for A2A targets.
+* DEAD depart second and engage TOO on Saipan, prioritising the north of Saipan. Defensive A2A only.
+* DEAD recover first when winchester in fuel state order.
+* CAP recover second in fuel state order.
+* Recovery Tanker available from T+30M.
+
+ROE:
+* All elements note SAM launch and MILF target locations as accurately as possible.
 * Positive hostile ID (visual, AWACS DECLARE, NCTR) required.
+* Collateral damage will likely trigger local insurgency. Take care with targets in proximity to civilian buildings.
 * NOGO south of WP4-WP5 line.
 
 
 ### Callsigns & Frequencies
 
 * RTFM (CVN-73) 251 (Bu1Ch1) TACAN 73X RTFM ICLS 3
-* PEBCAK (LHA-1) 252 (Bu1Ch2) TACAN 71X PEKC ICLS 1
+* PEBKAC (LHA-1) 252 (Bu1Ch2) TACAN 71X PEKC ICLS 1
 * ARCO-8 (S-3B Basket) 253 (Bu1Ch3) TACAN 10Y-AA ARC
 * PONTIAC-7 (Reaper JTAC) 254 (Bu1Ch4) Code 1681-1684
 * DARKSTAR-8 (E-2D AWACS) 261 (Bu2Ch1) TACAN 11Y-AA DRK
+* ACORN (Intelligence Officer)
 
 # Mission Checks
 
@@ -107,3 +131,8 @@ MILF forces may possess virtually any equipment purchased on the open and black 
 * Briefing
 * Scripts refreshed
 * Triggers tested
+* Maps prepped and included
+
+# Recordings
+
+* "DOGE, ACORN. Popup group bullseye two zero eight for nine, hostile A N fifty, low level, tracking south. Priority intercept, buster, weapons hot. Do not violate NOGO."
