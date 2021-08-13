@@ -92,12 +92,12 @@ MILF forces may possess virtually any equipment purchased on the open and black 
 SKANK will conduct DEAD operations on Saipan with CAP cover, to degrade SAM threat as part of establishing air superiority.
 
 Package DOGE:
-* SKANK1 - DEAD Lead (F/A-18) - HARM and Laser AGM-65
-* SKANK6 - DEAD 2 (F/A-18) - HARM and Laser AGM-65
-* SKANK5 - DEAD 3 (AV-8) - SIDEARM and Laser AGM-65
+* SKANK1 - DEAD Lead (F/A-18) - HARM
+* SKANK6 - DEAD 2 (F/A-18) - HARM
+* SKANK5 - DEAD 3 (AV-8) - SIDEARM
 * SKANK3 - CAP Lead (F-14)
-* SKANK2 - DEAD/CAP multirole (F/A-18) - HARM and Laser AGM-65
-* SKANK4 - DEAD/CAP multirole (F/A-18) - HARM and Laser AGM-65
+* SKANK2 - DEAD/CAP multirole (F/A-18) - HARM
+* SKANK4 - DEAD/CAP multirole (F/A-18) - HARM
 
 Flight Plan:
 * BULLSEYE WPT 6.
