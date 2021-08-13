@@ -17,12 +17,12 @@ Operation Oligarch is a co-op incremental campaign, which works as follows:
 * Do not change aircraft loadouts or skins.
 * destroyed SCM assets take 5 missions to replenish - be careful with your jets and protect the ships.
 * Default Aircraft BORTs:
-  * Psycho: 101 SKANK1
-  * Dudrounds: 102 SKANK2
-  * Burnzoire: 103 SKANK3
-  * Schmeardo: 104 SKANK4
-  * Plastikqs/Apsord: 105 SKANK5
-  * Ruprecht: 066 SKANK6
+  * Psycho: 101 SKANK1 61Y
+  * Dudrounds: 102 SKANK2 62Y
+  * Burnzoire: 103 SKANK3 63Y
+  * Schmeardo: 104 SKANK4 64Y
+  * Plastikqs/Apsord: 105 SKANK5 65Y
+  * Ruprecht: 066 SKANK6 66Y
 
 ### Required Downloads
 
@@ -102,17 +102,18 @@ Package DOGE:
 Flight Plan:
 * BULLSEYE WPT 6.
 * CAP depart 1510 and take station WP2-WP3 CAP ALPHA outside 20nm SAM threat area, weapons free. Primary responsibility for A2A targets.
-* DEAD depart 1512 and engage AD TOO on Saipan, prioritising the north of Saipan. Defensive A2A only.
+* MULTI depart 1511 and support CAP. Rotate into Saipan DEAD BETA once DEAD flight is winchester.
+* DEAD depart 1512 and engage AD TOO on Saipan DEAD BETA, prioritising the north of Saipan. Defensive A2A only.
 * DEAD recover first when winchester in fuel state order.
-* CAP recover second in fuel state order.
+* MULTI recover second when winchester in fuel state order.
+* CAP recover last in fuel state order.
 * Recovery Tanker available from T+30M.
 
 ROE:
 * All elements note SAM launch and MILF target locations as accurately as possible.
-* Positive hostile ID (visual, AWACS DECLARE, NCTR) required.
-* Collateral damage will likely trigger local insurgency. Take care with targets in proximity to civilian buildings.
+* Positive hostile airborne ID (visual, AWACS DECLARE, NCTR) required. All emitters on Saipan can be considered hostile.
+* Collateral damage will risk local insurgency. Take care with targets in proximity to civilian buildings.
 * NOGO south of WP4-WP5 line.
-
 
 ### Callsigns & Frequencies
 
@@ -120,8 +121,11 @@ ROE:
 * PEBKAC (LHA-1) 252 (Bu1Ch2) TACAN 71X PEC ICLS 1
 * ARCO-8 (S-3B Basket) 253 (Bu1Ch3) TACAN 10Y-AA ARC
 * PONTIAC-7 (Reaper JTAC) 254 (Bu1Ch4) Code 1681-1684
+* DOGE package airborne 255 (Bu1Ch5)
 * DARKSTAR-8 (E-2D AWACS) 261 (Bu2Ch1) TACAN 11Y-AA DRK
 * ACORN (Intelligence Officer)
+* DEAD airborne secure MIDS11
+* CAP airborne secure MIDS12
 
 # Mission Checks
 
