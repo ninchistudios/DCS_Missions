@@ -1,0 +1,6 @@
+env.info( '*** Initialising Recovery Tanker *** ' )
+local ArcoCVN=RECOVERYTANKER:New("RTFM", "SCM_ARCO")
+ArcoCVN:SetTACAN(10, "ARC")
+ArcoCVN:SetRadio(261)
+ArcoCVN:SetCallsign(CALLSIGN.Tanker.ARCO)
+ArcoCVN:Start(1)
