@@ -31,15 +31,16 @@ ctld.JTAC_location = true -- shows location of target in JTAC message
 
 ctld.JTAC_lock =  "all" -- "vehicle" OR "troop" OR "all" forces JTAC to only lock vehicles or troops or all ground units
 
-ctld.JTACAutoLase('JTAC1', 1681) -- These were the original JTAC options for Phase 1 and 2
-ctld.JTACAutoLase('JTAC2', 1682)
+
+ctld.JTACAutoLase('JTAC1', 1688) -- These were the original JTAC options for Phase 1 and 2
+ctld.JTACAutoLase('JTAC2', 1688)
 -- ctld.JTACAutoLase('JTAC3', 1683)
 
 
 -- RADIO PARAMETERS HAVE BEEN SET FOR COMMS THROUGH SRS --
 
--- ctld.JTACAutoLase('JTAC1', 1681, true, all, 1 {freq = "270.00", mod = "AM", name = "BLUE-REAPER-1-NORTH-270"})
--- ctld.JTACAutoLase('JTAC2', 1682, true, all, 1 {freq = "271.00", mod = "AM", name = "BLUE-REAPER-2-CENTRE-271"})
--- ctld.JTACAutoLase('JTAC3', 1683, true, all, 1 {freq = "272.00", mod = "AM", name = "BLUE-REAPER-3-SOUTH-272"})
+-- ctld.JTACAutoLase('JTAC1', 1688, true, all, 1 {freq = "270.00", mod = "AM", name = "JTAC1"})
+-- ctld.JTACAutoLase('JTAC2', 1688, true, all, 1 {freq = "271.00", mod = "AM", name = "JTAC2"})
+-- ctld.JTACAutoLase('JTAC3', 1688, true, all, 1 {freq = "272.00", mod = "AM", name = "BLUE-REAPER-3-SOUTH-272"})
 
 env.info( '*** RNR COMMON END *** ' )
