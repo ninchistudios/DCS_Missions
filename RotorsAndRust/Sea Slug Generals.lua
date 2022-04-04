@@ -4167,25 +4167,23 @@ world.addEventHandler(SEF_SHOTHANDLER)
 
 SEF_ONDEADEVENTHANDLER = {}
 function SEF_ONDEADEVENTHANDLER:onEvent(Event)
-    
     if Event.id == world.event.S_EVENT_DEAD then
         if Event.initiator then
-            if ( Event.initiator:getCategory() == 1 or Event.initiator:getCategory() == 3 ) then         -- UNIT or STATIC
+            if ( Event.initiator:getCategory() == 1 or Event.initiator:getCategory() == 3 ) then -- UNIT or STATIC
                 if ( Event.initiator:getCoalition() ~= nil ) then
-                                    
-                    local DeadUnitObjectCategory = Event.initiator:getCategory()                        -- 1 UNIT / 2 WEAPON / 3 STATIC / 4 BASE / 5 SCENERY / 6 CARGO
-                    local DeadUnitCategory          = Event.initiator:getDesc().category                    -- 0 AIRPLANE / 1 HELICOPTER / 2 GROUND_UNIT / 3 SHIP / 4 STRUCTURE
+                    local DeadUnitObjectCategory = Event.initiator:getCategory() -- 1 UNIT / 2 WEAPON / 3 STATIC / 4 BASE / 5 SCENERY / 6 CARGO
+                    local DeadUnitCategory          = Event.initiator:getDesc().category -- 0 AIRPLANE / 1 HELICOPTER / 2 GROUND_UNIT / 3 SHIP / 4 STRUCTURE
                     local DeadUnitCoalition      = Event.initiator:getCoalition()
                     local DeadUnitName             = Event.initiator:getName()
-					if ( DeadUnitCoalition == 1 ) then                                                                                                        -- RED ONLY                            
-                        if (( DeadUnitObjectCategory == 1 or DeadUnitObjectCategory == 3 ) and (DeadUnitCategory == 2 or DeadUnitCategory == 3 )) then        -- UNIT/STATIC + GROUND UNIT/SHIP
+					if ( DeadUnitCoalition == 1 ) then -- RED ONLY                            
+                        if (( DeadUnitObjectCategory == 1 or DeadUnitObjectCategory == 3 ) and (DeadUnitCategory == 2 or DeadUnitCategory == 3 )) then -- UNIT/STATIC + GROUND UNIT/SHIP
                             if ( string.find(DeadUnitName, "Chinese LUV Tigr") ) then  
                                 --Disregard As We Don't Want To Record This
                             else                    
                                 UnitIntermentTableLength = UnitIntermentTableLength + 1                
                                 SeaSlugUnitInterment[UnitIntermentTableLength] = DeadUnitName
                             end                                            
-                        elseif ( DeadUnitObjectCategory == 3 and DeadUnitCategory == 4 ) then                                                                -- STATIC + STRUCTURE
+                        elseif ( DeadUnitObjectCategory == 3 and DeadUnitCategory == 4 ) then -- STATIC + STRUCTURE
                             StaticIntermentTableLength = StaticIntermentTableLength + 1            
                             SeaSlugStaticInterment[StaticIntermentTableLength] = DeadUnitName
                         else
